@@ -10,10 +10,9 @@ def clip_gradients(g, max_norm):
 
     if max_norm<=0.0:
         return g
-    if l2_norm==0.0:
+    
+    if l2_norm<1e-8:
         return g
 
-    if l2_norm <= max_norm:
-        return g    
-
-    return g * max_norm / l2_norm        
+    scale = min(1.0, max_norm/l2_norm)
+    return g*scale    
