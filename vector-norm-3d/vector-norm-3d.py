@@ -11,6 +11,6 @@ def vector_norm_3d(v):
     if v.ndim==1:
         return np.linalg.norm(v)
     else:
-        ans = np.linalg.norm(v, axis=1)
+        ans = np.sqrt(np.sum(v**2, axis=1))
         return ans 
     
