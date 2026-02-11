@@ -5,14 +5,14 @@ def hit_rate_at_k(recommendations, ground_truth, k):
     # Write code here
     import numpy as np 
 
-    recommendations = np.asarray(recommendations)
-    ground_truth = np.asarray(ground_truth)
+    recommendations = np.asarray(recommendations, object)
+    ground_truth = np.asarray(ground_truth, object)
 
-    topk = recommendations[:, :k]
-    matches = (ground_truth==topk)
+    matches = []
 
-    count = np.any(matches, axis=1)
+    for gt, r in zip(ground_truth, recommendations):
+        topk = r[:k]
+        m = len(set(topk).intersection(set(gt))) > 0
+        matches.append(m)
 
-    hr = np.mean(count.astype(float))
-
-    return hr
+    return float(np.mean(matches))
