@@ -7,11 +7,12 @@ def cumulative_returns(returns):
 
     returns = np.asarray(returns)
 
-    cum_re = np.zeros(len(returns))
-    w = 1.0
+    w = 1 + returns
+    cum_grwoth = np.cumprod(w)
 
-    for i in range(len(returns)):
-        w = w * (1+returns[i])
-        cum_re[i] = w-1
+    cum_re = cum_grwoth - 1
 
-    return cum_re.tolist()    
+    return cum_re.tolist()
+    
+
+  
