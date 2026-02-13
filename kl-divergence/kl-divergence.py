@@ -5,8 +5,8 @@ def kl_divergence(p, q, eps=1e-12):
     Compute KL Divergence D_KL(P || Q).
     """
     # Write code here
-    p = np.asarray(p)
-    q = np.asarray(q)
+    p = np.asarray(p, float)
+    q = np.asarray(q, float)
 
     q_stable = q + eps
 
