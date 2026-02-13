@@ -11,6 +11,9 @@ def binary_focal_loss(predictions, targets, alpha, gamma):
 
     pt = np.where(targets==1, predictions, 1-predictions)
 
+    eps = 1e-7
+    pt = np.clip(pt, eps, 1-eps)
+
     fl = -(alpha)*( (1-pt)**gamma )*np.log(pt)
 
     return np.mean(fl)
