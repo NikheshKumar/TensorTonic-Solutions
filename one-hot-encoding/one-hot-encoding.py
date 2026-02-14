@@ -8,7 +8,7 @@ def one_hot(y, num_classes=None):
     y = np.asarray(y, int)
   
     if num_classes is None:
-      num_classes = np.max(y) + 1 if len(y) > 0 else 0
+      num_classes = len(np.unique(y))
 
     ohm = np.zeros((len(y), num_classes), int)
 
