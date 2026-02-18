@@ -7,7 +7,7 @@ def log_transform(values):
     import math
 
     values = np.asarray(values, float)
-    y = [math.log1p(v) for v in values]
+    y = np.log1p(values)
     eps = 1e-7
     y = np.clip(y, eps, None)
 
