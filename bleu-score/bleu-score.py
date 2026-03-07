@@ -35,10 +35,12 @@ def bleu_score(candidate, reference, max_n):
     if np.any(prec == 0):
         return 0.0
 
-    if c >= r:
-        bp = 1.0
-    else:
-        bp = np.exp(1 - r / c) 
+    # if c >= r:
+    #     bp = 1.0
+    # else:
+    #     bp = np.exp(1 - r / c) 
+
+    bp = np.exp(np.min([0, 1 - r/c]))
 
     prec = np.where(prec == 0, 1e-7, prec)
     
