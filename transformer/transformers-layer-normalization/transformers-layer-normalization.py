@@ -19,8 +19,8 @@ def layer_norm(x: np.ndarray, gamma: np.ndarray, beta: np.ndarray, eps: float = 
     beta = np.asarray(beta, float)
 
     
-    m = np.mean(x, axis=0)
-    var = np.var(x, axis=0)
+    m = np.mean(x, axis=-1, keepdims=True)
+    var = np.var(x, axis=-1, keepdims=True)
   
     ln = gamma * (x-m) / np.sqrt(var + eps) + beta
 
