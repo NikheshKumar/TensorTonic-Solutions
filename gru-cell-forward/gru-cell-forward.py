@@ -17,26 +17,25 @@ def gru_cell_forward(x, h_prev, params):
     Supports shapes (D,) & (H,) or (N,D) & (N,H).
     """
     # Write code here
-
-    x = np.asarray(x, dtype=float)
-    h_prev = np.asarray(h_prev, dtype=float)
+    x = np.asarray(x, float)
+    h_prev = np.asarray(h_prev, float)
 
     Wz, Uz, bz = params["Wz"], params["Uz"], params["bz"]
     Wr, Ur, br = params["Wr"], params["Ur"], params["br"]
-    Wh, Uh, bh = params["Wh"], params["Uh"], params["bh"]
+    Wh, Uh, bh = params["Wh"], params["Uh"], params["bh"] 
 
-    x, x_was_1d = _as2d(x, Wz.shape[0])
-    h_prev, h_was_1d = _as2d(h_prev, Uz.shape[0])
+    x, x_1d  = _as2d(x, Wz.shape[0])
+    h_prev, h_1d = _as2d(h_prev, Uz.shape[0])
+    
+    z = _sigmoid(x@Wz + h_prev@Uz + bz)
 
-    z = _sigmoid(x @ Wz + h_prev @ Uz + bz)
+    r = _sigmoid(x@Wr + h_prev@Ur + br)
 
-    r = _sigmoid(x @ Wr + h_prev @ Ur + br)
-
-    h_hat = np.tanh( x @ Wh + (r*h_prev) @ Uh + bh )
+    h_hat = np.tanh(x@Wh + (r*h_prev)@Uh + bh)
 
     h_new = (1-z) * h_prev + z * h_hat
 
-    if x_was_1d:
-        h_new = h_new.squeeze(0)
+    if x_1d:
+      h_new = h_new.squeeze(0)
 
     return h_new
