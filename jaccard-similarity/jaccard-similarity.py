@@ -5,9 +5,9 @@ def jaccard_similarity(set_a, set_b):
     # Write code here
     import numpy as np 
 
-    i = set(set_a) & set(set_b)
-    u = set(set_a) | set(set_b)
+    seta = np.asarray(set_a)
+    setb = np.asarray(set_b)
 
-    j = len(i) / len(u) if len(u)>0 else 0.0
+    j = len(np.intersect1d(seta, setb)) / len(np.union1d(seta, setb)) if len(np.union1d(seta, setb))!=0 else 0.0
 
     return j
