@@ -6,8 +6,4 @@ def leaky_relu(x, alpha=0.01):
     """
     # Write code here
     x = np.asarray(x, float)
-
-    ans = np.where(x>=0.0, x, alpha*x)
-
-    return ans
-
+    return np.maximum(x,alpha*x)
