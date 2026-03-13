@@ -12,12 +12,12 @@ def pca_projection(X, k):
 
     cov = X_c.T @ X_c / (N-1)
 
-    eig_vals, eig_vectors = np.linalg.eig(cov)
+    eig_vals, eig_vectors = np.linalg.eigh(cov)
 
     index = np.argsort(eig_vals)[::-1][:k]
 
     W = eig_vectors[:,index]
 
-    proj = X_c @ W
-
+    proj = np.dot(X_c, W)
+  
     return proj
