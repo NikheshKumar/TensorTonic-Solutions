@@ -7,15 +7,14 @@ def binomial_pmf_cdf(n, p, k):
     """
     # Write code here
     def pmf(n,p,k):
-        return comb(n, k) * (p ** k) * ((1 - p) ** (n - k))
+      v1 = (p**k)
+      v2 = (1-p)**(n-k)
+      return comb(n,k) * v1 * v2
 
-    PMF = pmf(n,p,k)    
+    PMF = pmf(n,p,k)
 
-    r = np.arange(0, k + 1)
-    #CDF = np.sum(comb(n, r) * (p ** r) * ((1 - p) ** (n - r)))
-    CDF = np.sum(pmf(n,p,r))
-
-    return PMF, CDF
+    r = np.arange(0,k+1,1)
+    cdf = np.sum(pmf(n,p,r))
 
 
-    
+    return float(PMF), float(cdf)
