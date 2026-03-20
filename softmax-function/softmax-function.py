@@ -8,10 +8,12 @@ def softmax(x):
     """
     # Write code here
     x = np.asarray(x, float)
+  
+    m = np.max(x, axis=-1, keepdims=True)
+  
+    num = np.exp(x-m)
+    den = np.sum(np.exp(x-m), axis=-1, keepdims=True)
 
-    if x.ndim==1:
-        ans = np.exp(x- np.max(x)) / np.sum( np.exp(x- np.max(x)) )
-    elif x.ndim==2:
-        ans = np.exp(x- np.max(x, axis=1, keepdims=True)) / np.sum( np.exp(x- np.max(x, axis=1, keepdims=True)), axis=1, keepdims=True )   
-
+    ans = num/den
+  
     return ans
