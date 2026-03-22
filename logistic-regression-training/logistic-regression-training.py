@@ -12,20 +12,17 @@ def train_logistic_regression(X, y, lr=0.1, steps=1000):
     # Write code here
     X = np.asarray(X, float)
     y = np.asarray(y, float)
-  
-    w = np.zeros(len(X[0]))
+
+    N, D = X.shape
+    W = np.zeros((D,), float)
     b = 0.0
     
-    for i in range(steps):
-      
-      z = np.dot(X,w) + b
-      p = _sigmoid(z) 
-    
-      
-      gradw = np.mean(X.T@(p-y))
-      gradb = np.mean(p-y)
-  
-      w = w - lr * gradw
-      b = b - lr * gradb
+    for _ in range(steps):
+        p = _sigmoid(X@W + b)
+        grad_W = X.T @ (p-y) / N
+        grad_b = np.mean(p-y)
+        W = W - lr * grad_W
+        b = b - lr * grad_b
 
-    return w,b
+    return W,b
+        
