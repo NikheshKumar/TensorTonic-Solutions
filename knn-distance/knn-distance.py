@@ -25,8 +25,8 @@ def knn_distance(X_train, X_test, k):
     if k <= X_train.shape[0]:
         return indices[:, :k]
         
-    res = np.full((X_test.shape[0], k), -1, dtype=int)
-    res[:, :X_train.shape[0]] = indices
-    
-    return res
+    else:
+        res = np.full((X_test.shape[0], k), -1, dtype=int)
+        res[:, :X_train.shape[0]] = indices
+        return res
     
