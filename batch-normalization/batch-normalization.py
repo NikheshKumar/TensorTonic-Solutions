@@ -9,22 +9,19 @@ def batch_norm_forward(x, gamma, beta, eps=1e-5):
     gamma = np.asarray(gamma, float)
     beta = np.asarray(beta, float)
 
-    if x.ndim == 2:
-      m = np.mean(x, axis=0, keepdims=True)
-      var = np.mean( (x-m)**2, axis=0, keepdims=True  )
+    if x.ndim==2:
+        mu = np.mean(x, keepdims=True, axis=0)
+        var = np.var(x, keepdims=True, axis=0)
 
-    elif x.ndim == 4:
-      m = np.mean(x, axis=(0,2,3), keepdims=True)
-      var = np.mean( (x-m)**2 , axis=(0,2,3), keepdims=True )
+    if x.ndim==4:
+        mu = np.mean(x, axis=(0,2,3), keepdims=True)
+        var = np.var(x, axis=(0,2,3), keepdims=True)
+        gamma = gamma.reshape(1,-1,1,1)
+        beta = beta.reshape(1,-1,1,1)
+    
 
-      gamma = gamma.reshape(1,-1,1,1)
-      beta = beta.reshape(1,-1,1,1)
+    x_hat = (x-mu) / np.sqrt(var + eps)
 
-    x_new = (x-m) / np.sqrt(var + eps)
-    y = gamma * x_new + beta
+    y = gamma * x_hat + beta
 
     return y
-      
-
-    
-  
