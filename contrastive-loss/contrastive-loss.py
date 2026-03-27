@@ -9,25 +9,13 @@ def contrastive_loss(a, b, y, margin=1.0, reduction="mean") -> float:
     Return: float
     """
     # Write code here
-    a = np.asarray(a, float)
-    b = np.asarray(b, float)
-    y = np.asarray(y, float)
-
-    if a.ndim == 1:
-        a = a[np.newaxis, :]
-    if b.ndim == 1:
-        b = b[np.newaxis, :]
+    a = np.array(a, float, ndmin=2)
+    b = np.array(b, float, ndmin=2)
+    y = np.array(y, float, ndmin=2)
 
     d = np.linalg.norm(a-b, axis=1)
 
-    if reduction=="mean":
-        loss = np.mean( y * d**2 + (1-y) * np.maximum(0, margin-d)**2 )
+    l = np.sum(y*(d**2) + (1-y)*(np.maximum(0,margin-d)**2)) if reduction=="sum" else np.mean(y*(d**2) + (1-y)*(np.maximum(0,margin-d)**2))
 
-    elif reduction=="sum":  
-        loss = np.sum( y * d**2 + (1-y) * np.maximum(0, margin-d)**2 )
-
-    else:
-        raise ValueError("reduction must be either 'mean' or 'sum'")    
-
-    return float(loss) 
-
+    return float(l)
+    
