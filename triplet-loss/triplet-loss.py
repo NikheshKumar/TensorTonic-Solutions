@@ -5,9 +5,9 @@ def triplet_loss(anchor, positive, negative, margin=1.0):
     Compute Triplet Loss for embedding ranking.
     """
     # Write code here
-    positive =  np.asarray(positive, float)
-    negative = np.asarray(negative, float)
-    anchor = np.asarray(anchor, float)
+    positive =  np.array(positive, float, ndmin=2)
+    negative = np.array(negative, float, ndmin=2)
+    anchor = np.array(anchor, float, ndmin=2)
 
 
     d_ap = np.sum( (anchor - positive )**2, axis=-1 )
