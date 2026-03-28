@@ -8,7 +8,9 @@ def bptt_single_step(dh_next: np.ndarray, h_t: np.ndarray, h_prev: np.ndarray,
     """
     # YOUR CODE HERE
     d_tanh = (1-h_t**2) * dh_next
-    dW_hh = h_prev.T @ d_tanh 
-    dh_prev = d_tanh @ W_hh.T
+
+    dW_hh = d_tanh.T @ h_prev
+
+    dh_prev = d_tanh @ W_hh
 
     return dh_prev, dW_hh
