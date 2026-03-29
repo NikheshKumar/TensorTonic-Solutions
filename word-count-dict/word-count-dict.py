@@ -3,16 +3,13 @@ def word_count_dict(sentences):
     Returns: dict[str, int] - global word frequency across all sentences
     """
     # Your code here
-    import numpy as np 
 
     freq_dic = {}
 
-    for sentence in sentences:
-        for word in sentence:
-            if word in freq_dic:
-                freq_dic[word] += 1
-            else:
-                freq_dic[word] = 1
+    for s in sentences:
+        for w in s:
+            if w not in freq_dic:
+                freq_dic[w] = 0 
+            freq_dic[w] += 1
 
-
-    return freq_dic            
+    return freq_dic
