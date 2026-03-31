@@ -10,9 +10,11 @@ def normalize_3d(v):
     v_norm = np.linalg.norm(v,ord=2, axis=-1, keepdims=True)
     
     mask = v_norm >1e-8
+
+    res = v.copy()
     
-    np.divide(v, v_norm, where=mask, out=v)
+    np.divide(v, v_norm, where=mask, out=res)
     
-    return v
+    return res
 
     
