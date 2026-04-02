@@ -6,7 +6,9 @@ def euclidean_distance(x, y):
     Must return a float.
     """
     # Write code here
-    x,y = np.asarray(x), np.asarray(y)
+    x = np.asarray(x, float)
+    y = np.asarray(y, float)
+    
     d = np.sqrt(np.sum((x-y)**2))
 
     return d
