@@ -9,7 +9,17 @@ def t_test_one_sample(x, mu0):
 
     n = len(x)
     s = np.std(x, ddof=1)
+    mu_x = np.mean(x)
 
-    t = (np.mean(x) - mu0)*np.sqrt(n) / s
+    if n <= 1:
+        return 0.0
 
-    return t
+    if s == 0.0:
+        if mu_x == mu0:
+            return 0.0  
+        else:
+            return float('inf')
+
+    t = (mu_x- mu0)*np.sqrt(n) / s
+
+    return float(t)
