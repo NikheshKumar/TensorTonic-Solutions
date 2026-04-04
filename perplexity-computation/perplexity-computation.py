@@ -7,17 +7,18 @@ def perplexity(prob_distributions, actual_tokens):
 
     prob_distributions = np.asarray(prob_distributions, float)
     actual_tokens = np.asarray(actual_tokens, int)
-
+    
     n = len(actual_tokens)
-    if n == 0:
+
+    if n==0:
         return None
 
     p = prob_distributions[np.arange(n), actual_tokens]
-    
-    p = np.clip(p, 1e-12, 1.0)
 
-    H = - np.mean(np.log(p))
+    p = np.clip(p, 1e-8, 1.0)
 
-    PP = np.exp(H)
+    H = -np.mean(np.log(p))
 
-    return PP
+    return float(np.exp(H))
+
+
