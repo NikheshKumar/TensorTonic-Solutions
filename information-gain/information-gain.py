@@ -21,8 +21,6 @@ def information_gain(y, split_mask):
     y = np.asarray(y, dtype=float)
     split_mask = np.asarray(split_mask, dtype=bool)
 
-    cla, counts = np.unique(y, return_counts=True)
-
     H = _entropy(y)
 
     y_L = y[split_mask]
@@ -33,9 +31,11 @@ def information_gain(y, split_mask):
 
     N = len(y)
     n_L = len(y_L)
-    n_R = N - n_L
-    
+    n_R = len(y_R)
 
+    if n_L == 0 or n_R == 0:
+        return 0.0
+    
     ig = H - (n_L * H_L + n_R * H_R) / N
 
     return ig
