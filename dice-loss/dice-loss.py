@@ -5,8 +5,8 @@ def dice_loss(p, y, eps=1e-8):
     Compute Dice Loss for segmentation.
     """
     # Write code here
-    p = np.asarray(p, float)
-    y = np.asarray(y, float)
+    p = np.asarray(p, float).ravel()
+    y = np.asarray(y, float).ravel()
 
 
     num = 2*np.sum(p*y) + eps
