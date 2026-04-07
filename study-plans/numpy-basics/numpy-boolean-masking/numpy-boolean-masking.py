@@ -11,15 +11,11 @@ def row_summary(data, threshold):
     ele_mask = new_data > threshold
 
     #row level masking
-    row_mask1 = np.any(new_data > threshold, axis=1, keepdims=True)
-    row_any = np.broadcast_to(row_mask1, (m, n))
-    row_any_filtered = row_any * new_data
+    row_mask1 = np.any(ele_mask, axis=1, keepdims=True)
 
-    row_mask2 = np.all(new_data > threshold, axis=1, keepdims=True)
-    row_all = np.broadcast_to(row_mask2, (m, n))
-    row_all_filtered = row_all * new_data
+    row_mask2 = np.all(ele_mask, axis=1, keepdims=True)
 
-    res = np.stack([ele_mask, row_any_filtered, row_all_filtered], axis=0)
+    res = np.stack([ele_mask, row_mask1 * new_data, row_mask2 * new_data], axis=0)
 
     return res.astype(np.float64)
     
