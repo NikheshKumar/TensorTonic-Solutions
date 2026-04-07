@@ -7,7 +7,7 @@ def reshape_array(data, operation):
     data = np.asarray(data, dtype=np.float64)
     
     if operation=="flatten":
-        return data.flatten()
+        return data.ravel()
         
     if operation=="transpose":
         return data.T
