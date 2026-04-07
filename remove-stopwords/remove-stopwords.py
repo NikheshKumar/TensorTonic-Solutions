@@ -3,13 +3,14 @@ def remove_stopwords(tokens, stopwords):
     Returns: list[str] - tokens with stopwords removed (preserve order)
     """
     # Your code here
-    stop = set(stopwords)
-    ans = []
+    import numpy as np 
 
-    for token in tokens:
-        if token in stop:
-            continue
-        else:
-            ans.append(token)    
+    stop_set = set(stopwords)
+    res = []
 
-    return ans        
+    for t in tokens:
+        if t not in stop_set:
+            res.append(t)
+
+    return res
+        
