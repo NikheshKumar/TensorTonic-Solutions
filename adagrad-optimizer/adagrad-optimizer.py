@@ -5,14 +5,12 @@ def adagrad_step(w, g, G, lr=0.01, eps=1e-8):
     Perform one AdaGrad update step.
     """
     # Write code here
+    w = np.asarray(w, np.float64)
+    g = np.asarray(g, np.float64)
+    G = np.asarray(G, np.float64)
 
-    w = np.asarray(w, float)
-    g = np.asarray(g, float)
-    G = np.asarray(G, float)
+    new_G = G + g**2
 
-    G_new = G + g**2
+    new_w = w - lr*g / np.sqrt(new_G + eps)
 
-    w_new = w - ((lr * g) / (np.sqrt(G_new + eps)))
-
-    return w_new, G_new
-    
+    return new_w, new_G
