@@ -13,4 +13,4 @@ def cosine_similarity(a, b):
     if abs(np.minimum(norm_a, norm_b)) < 1e-8:
         return 0.000000
 
-    return np.dot(a, b) / (norm_a*norm_b)
+    return (np.dot(a, b) / (norm_a*norm_b)).astype(np.float64)
