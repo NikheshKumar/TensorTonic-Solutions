@@ -10,4 +10,4 @@ def vector_norms(v):
     l2 = np.linalg.norm(v, ord=2)
     l_inf = np.max(np.abs(v))
 
-    return l1, l2, l_inf
+    return np.array([l1, l2, l_inf])
