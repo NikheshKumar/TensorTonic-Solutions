@@ -7,4 +7,4 @@ def solve_linear_system(A, b):
     A = np.asarray(A, np.float64)
     b = np.asarray(b, np.float64)
 
-    return np.linalg.inv(A) @ b
+    return np.linalg.solve(A,b)
