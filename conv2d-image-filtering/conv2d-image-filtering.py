@@ -5,28 +5,30 @@ def conv2d(image, kernel, stride=1, padding=0):
     # Write code here
     import numpy as np 
 
-    image = np.asarray(image, float)
-    kernel = np.asarray(kernel, float)
+    image = np.asarray(image, np.float64)
+    kernel = np.asarray(kernel, np.float64)
 
-    H,W = image.shape
+    H, W = image.shape 
     kh, kw = kernel.shape
+    
 
-    if padding > 0:
-        image_padded = np.pad(image, ((padding, padding), (padding, padding)), mode='constant')
+    if padding>0:
+        padded = np.pad(image, ((padding, padding), (padding, padding)), mode='constant')
     else:
-        image_padded = image
+        padded = image
 
-    H_p, W_p = image_padded.shape
+    H_p, W_p = padded.shape
+    H_out, W_out = 1 + (H_p - kh) // stride, 1 + (W_p - kw) // stride 
 
-    H_out = 1 + (H_p - kh) // stride
-    W_out = 1 + (W_p - kw) // stride 
-
-    out = np.zeros((H_out, W_out), float)   
+    output = np.zeros((H_out, W_out), np.float64)
+    
 
     for i in range(H_out):
         for j in range(W_out):
-            region = image_padded[i*stride :i*stride + kh, j*stride: j*stride + kw]
-            out[i][j] = np.sum(region*kernel)
+            padded_patch = padded[i*stride :i*stride + kh, j*stride: j*stride + kw]
+            output[i,j] = np.sum(padded_patch * kernel)
 
 
-    return out.tolist()                
+    return output.tolist()
+
+    
