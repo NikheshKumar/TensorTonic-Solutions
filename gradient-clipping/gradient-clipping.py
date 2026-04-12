@@ -7,7 +7,7 @@ def clip_gradients(g, max_norm):
     # Write code here
     g = np.asarray(g, dtype=np.float64)
 
-    g_norm = np.sqrt(np.sum(g * g))
+    g_norm = np.linalg.norm(g.ravel(), ord=2)
 
     if max_norm <= 0 or g_norm==0.0:
         return g
