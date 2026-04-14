@@ -6,13 +6,13 @@ def low_rank_approximation(A, r):
     """
     A = np.asarray(A, np.float64)
 
-    U, s, Vt = np.linalg.svd(A, full_matrices=True)
+    U, s, Vt = np.linalg.svd(A, full_matrices=False)
 
-    U = U[:,:r]
-    s = s[:r]
-    Vt = Vt[:r,:]
+    Ur = U[:,:r]
+    sr = s[:r]
+    Vtr = Vt[:r,:]
 
-    At = U @ np.diag(s) @ Vt
+    At = Ur @ np.diag(sr) @ Vtr
 
     return At
 
