@@ -23,4 +23,4 @@ def perceptron(X, y, lr=0.1, epochs=100):
             w = w + lr * (y[i] - y_hat) * X[i]
             b = b + lr * (y[i] - y_hat)
 
-    return w, b    
+    return w.tolist(), float(b)   
