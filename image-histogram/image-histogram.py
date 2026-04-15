@@ -3,14 +3,16 @@ def image_histogram(image):
     Compute the intensity histogram of a grayscale image.
     """
     # Write code here
-
     import numpy as np 
 
-    ans = np.zeros(256)
-    image = np.asarray(image)
+    image = np.asarray(image, int)
 
-    for i in range(256):
-        ans[i] = np.sum(image==i)
+    his = np.zeros((256,), np.float64)
 
-    return ans.tolist()
+    for i in range(image.shape[0]):
+        for j in range(image.shape[1]):
+            val = image[i,j]
+            his[val] += 1
 
+
+    return his.tolist()
