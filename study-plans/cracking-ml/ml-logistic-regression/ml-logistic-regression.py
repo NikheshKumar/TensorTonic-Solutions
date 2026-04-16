@@ -14,7 +14,9 @@ def logistic_regression(X, y, lr=0.01, n_iters=1000):
     b = 0.0
 
     def _sigmoid(x):
-        return np.exp(x) / (1+np.exp(x))
+        return np.where(x >= 0, 
+                        1 / (1 + np.exp(-x)), 
+                        np.exp(x) / (1 + np.exp(x)))
 
     for i in range(n_iters):
 
