@@ -22,7 +22,7 @@ def softmax_regression(X, y, n_classes, lr=0.01, n_iters=1000):
         P = np.exp(new_z) / np.sum(np.exp(new_z), axis=1, keepdims=True)
 
         grad_W = (1.0/n)*np.dot(X.T, (P - Y_onehot))
-        grad_b = (1.0/n)*np.sum(P - Y_onehot, axis=0)
+        grad_b = (1.0/n)*np.dot(np.ones(n).T, P - Y_onehot)
 
         W = W - lr*grad_W
         b = b - lr*grad_b
