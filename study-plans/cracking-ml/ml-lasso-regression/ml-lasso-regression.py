@@ -15,13 +15,12 @@ def lasso_regression(X, y, lr, epochs, alpha):
 
     for i in range(epochs):
 
-        y_hat = np.dot(X,W) + b
-
-        grad_W = (2.0/n) * np.dot(X.T, y_hat-y) + alpha*np.sign(W)
-        grad_b = (2.0/n) * np.sum(y_hat-y)
-
-        W = W - lr*grad_W
-        b = b - lr*grad_b
+        y_hat = X @ W + b
+        error = y_hat - y
+        grad_W = (2.0 / n) * (X.T @ error) + alpha * np.sign(W)
+        grad_b = (2.0 / n) * np.sum(error)
+        W -= lr * grad_W
+        b -= lr * grad_b
 
 
     return W.tolist(), float(b)
