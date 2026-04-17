@@ -18,25 +18,26 @@ def information_gain(y, split_mask):
     Use the _entropy() helper above.
     """
     # Write code here
-    y = np.asarray(y, dtype=float)
-    split_mask = np.asarray(split_mask, dtype=bool)
+    y = np.asarray(y, np.float64)
+    split_mask = np.asarray(split_mask, bool)
 
     H = _entropy(y)
 
-    y_L = y[split_mask]
-    H_L = _entropy(y_L)
+    Yl = y[split_mask]
+    Hl = _entropy(Yl)
 
-    y_R = y[~split_mask]
-    H_R = _entropy(y_R)
+    Yr = y[~split_mask]
+    Hr = _entropy(Yr)
 
     N = len(y)
-    n_L = len(y_L)
-    n_R = len(y_R)
+    n_l = len(Yl)
+    n_r =len(Yr)
 
-    if n_L == 0 or n_R == 0:
-        return 0.0
-    
-    ig = H - (n_L * H_L + n_R * H_R) / N
+    ig = H - (n_l*Hl + n_r*Hr) / N
 
     return ig
+
+    
+
+    
     
