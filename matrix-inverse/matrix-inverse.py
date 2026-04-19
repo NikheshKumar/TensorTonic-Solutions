@@ -5,23 +5,15 @@ def matrix_inverse(A):
     Returns: A_inv of shape (n, n) such that A @ A_inv ≈ I
     """
     # Write code here
-    A = np.asarray(A, float)
+    
+    A = np.asarray(A, np.float64)
     n,d = A.shape
 
-    if A.ndim != 2 or n != d:
+    if n!=d or A.ndim!=2:
         return None
 
-    eps = 1e-12
-    det_A = np.linalg.det(A)
-
-    if abs(det_A) < eps:
+    eps=1e-12
+    if abs(np.linalg.det(A)) < eps:
         return None
-
-    A_inv = np.linalg.inv(A) 
-    return A_inv  
-
-
         
-
-
-
+    return np.linalg.inv(A)
