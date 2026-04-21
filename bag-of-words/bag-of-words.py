@@ -7,13 +7,13 @@ def bag_of_words_vector(tokens, vocab):
     # Your code here
 
     d = { vocab[i]:i for i in range(len(vocab)) }
-
-    ans = np.zeros(len(vocab), dtype=int)
-
-    for tok in tokens:
-        if tok in d:
-            ans[d[tok]] += 1
-
-    return np.asarray(ans, int)    
-
     
+    res = np.zeros((len(vocab),), dtype=int)
+
+
+    for t in tokens:
+        if t in d:
+            res[d[t]] += 1
+
+
+    return res
