@@ -3,28 +3,18 @@ def iou(box_a, box_b):
     Compute Intersection over Union of two bounding boxes.
     """
     # Write code here
-    import numpy as np
-    box_a = np.asarray(box_a, dtype=float)
-    box_b = np.asarray(box_b, dtype=float)
+    import numpy as np 
 
-    ax1, ay1, ax2, ay2 = box_a
-    bx1, by1, bx2, by2 = box_b
+    x1a, y1a, x2a, y2a = box_a
+    x1b, y1b, x2b, y2b = box_b
 
-    left = max(ax1, bx1)
-    right = min(ax2, bx2)
-    bottom = max(ay1, by1)
-    top = min(ay2, by2)
+    area_a = max(0, (x2a-x1a)*(y2a-y1a))
+    area_b = max(0, (x2b-x1b)*(y2b-y1b))
 
-    h = max(0, top - bottom)
-    b = max(0, right - left)
+    h = max(0, min(y2a,y2b)-max(y1a,y1b))
+    b = max(0, min(x2a,x2b)-max(x1a,x1b))
 
-    area_a = max(0, (ax2-ax1) * (ay2-ay1))
-    area_b = max(0, (bx2-bx1) * (by2-by1))
+    i = h * b
+    u = area_a + area_b - i
 
-    Intersection = h*b
-    Union = area_a + area_b - Intersection
-
-    if Union > 0.0 :
-        return Intersection / Union
-    else:
-        return 0.0    
+    return float(i/u) if u>0.0 else 0.0 
