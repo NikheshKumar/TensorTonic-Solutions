@@ -4,12 +4,9 @@ def log_transform(values):
     """
     # Write code here
     import numpy as np 
-    import math
 
-    values = np.asarray(values, float)
-    y = np.log1p(values)
-    eps = 1e-7
-    y = np.clip(y, eps, None)
+    eps = 1e-6
 
-    return y
-    
+    values = np.asarray(values, np.float64)
+
+    return np.clip(np.log(1.0+values), eps, None)
