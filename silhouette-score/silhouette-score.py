@@ -13,30 +13,33 @@ def silhouette_score(X, labels):
 
     n_samples, n_features = X.shape
 
-    difference_mat = X[:, None, :] - X[None, :, :]
+    dist_mat = X[:,None,:] - X[None,:,:]
 
-    euclidean_dist = np.linalg.norm(difference_mat, axis=2)  
+    euclidean_dist = np.linalg.norm(dist_mat, axis=2)
 
-    s = np.zeros(n_samples)
+    sil_mat = np.zeros((n_samples,))
 
     for i in range(n_samples):
 
-        same_cluster = labels == labels[i]
-        other_cluster = labels != labels[i]
+        same = labels==labels[i]
+        other = ~same
 
-        same_cluster[i] = False
+        same[i] = False
 
-        if np.any(same_cluster):
-            a = np.mean(euclidean_dist[i, same_cluster])
+        if np.any(same) :
+            a = np.mean(euclidean_dist[i, same])
         else:
             a = 0.0
 
         b = float('inf')
-        
-        for l in np.unique(labels[other_cluster]):
-            mask = labels == l
-            b = min(b, np.mean(euclidean_dist[i, mask]))    
 
-        s[i] = (b - a) / ( max( a, b ) )
+        for l in np.unique(labels[other]):
+            mask = labels==l
+            b = np.minimum(b, np.mean(euclidean_dist[i, mask]))
 
-    return np.mean(s)
+        sil_mat[i] = (b-a)/(np.maximum(a,b))
+
+
+    return np.mean(sil_mat).astype(np.float64)
+
+    
