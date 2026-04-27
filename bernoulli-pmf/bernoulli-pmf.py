@@ -5,12 +5,12 @@ def bernoulli_pmf_and_moments(x, p):
     Compute Bernoulli PMF and distribution moments.
     """
     # Write code here
+    x = np.asarray(x, np.float64)
+    
+    pmf = np.where(x==1, p, 1-p)
 
-    x = np.asarray(x, int)
+    mean = p
 
-    m = p
     var = p*(1-p)
 
-    pmf = np.where(x==0, 1-p, p)
-    
-    return pmf, m, var
+    return pmf, mean, var
