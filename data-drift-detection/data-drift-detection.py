@@ -8,11 +8,11 @@ def detect_drift(reference_counts, production_counts, threshold):
     reference_counts = np.asarray(reference_counts)
     production_counts = np.asarray(production_counts)
 
-    ref = reference_counts / np.sum(reference_counts)
-    prod = production_counts / np.sum(production_counts)
+    r = reference_counts / np.sum(reference_counts)
+    p = production_counts / np.sum(production_counts)
 
-    tvd = np.sum( abs(ref-prod) ) / 2
+    tvd = np.sum(np.abs(r-p)) / 2
 
-    ans = {"score":tvd, "drift_detected":bool(tvd>threshold)}
+    ans_drift = {"score":tvd, "drift_detected":bool(tvd > threshold)}
 
-    return ans
+    return ans_drift
