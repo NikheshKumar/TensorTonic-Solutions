@@ -11,7 +11,7 @@ def autocorrelation(series, max_lag):
     if n == 0:
         return []
 
-    if np.var(x) == 0:
+    if np.var(x) == 0.0:
         res = [0.0] * (max_lag + 1)
         res[0] = 1.0
         return res
