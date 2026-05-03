@@ -7,14 +7,13 @@ def chi2_independence(C):
     # Write code here
     C = np.asarray(C)
 
-    C_rows = np.sum(C, axis=1) 
-    C_cols = np.sum(C, axis=0)
+    row_totals = np.sum(C, axis=1)
+    col_totals = np.sum(C, axis=0)
 
-    N = np.sum(C)
-    
-    E = np.outer(C_rows, C_cols) / N
+    E = np.outer(row_totals, col_totals) / np.sum(C)
 
-    chi2 = np.sum((C-E)**2/E)
-
+    chi2 = np.sum((C-E)**2 / E)
 
     return chi2, E
+
+    
