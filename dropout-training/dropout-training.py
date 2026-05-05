@@ -6,20 +6,20 @@ def dropout(x, p=0.5, rng=None):
     Return (output, dropout_pattern).
     """
     # Write code here
-    x = np.asarray(x, float)
-  
+    x = np.asarray(x, np.float64)
+
     if rng is None:
-      rng = np.random
+        rng = np.random
 
     random_vals = rng.random(x.shape)
-    mask = random_vals/(1-p) < 1
+    mask = random_vals/ (1-p) < 1.0
 
-    if p==1.0:
-      dropout_pattern = np.zeros_like(x)
-    if p==0.0:
-      dropout_pattern = np.ones_like(x)
+    if p == 1.0:
+        dropout_pattern = np.zeros_like(x)
+    if p == 0.0:
+        dropout_pattern = np.ones_like(x)
     else:
-      dropout_pattern = mask.astype(float) /(1-p)
+        dropout_pattern = mask.astype(np.float64) / (1-p)
 
     output = x * dropout_pattern
 
