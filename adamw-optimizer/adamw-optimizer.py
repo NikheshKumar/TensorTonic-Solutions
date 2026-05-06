@@ -5,11 +5,16 @@ def adamw_step(w, m, v, grad, lr=0.001, beta1=0.9, beta2=0.999, weight_decay=0.0
     Perform one AdamW update step.
     """
     # Write code here
-    w,m,v = np.asarray(w, dtype=float), np.asarray(m, dtype=float), np.asarray(v,dtype=float)
-    grad = np.asarray(grad, dtype=float)
+    w = np.asarray(w, np.float64)
+    m = np.asarray(m, np.float64)
+    v = np.asarray(v, np.float64)
+    grad = np.asarray(grad, np.float64)
 
-    new_m = beta1 * m + (1-beta1)*grad
-    new_v = beta2 * v + (1-beta2)*(grad**2)
-    new_w = w - lr*(weight_decay * w) - lr * new_m / ( np.sqrt(new_v) + eps)
+    m = beta1*m + (1-beta1)*grad
+    
+    v = beta2*v + (1-beta2)*(grad**2)
 
-    return new_w, new_m, new_v
+    w = w - lr*(weight_decay*w) - lr*m/(np.sqrt(v)+eps)
+
+    return w, m, v
+    
