@@ -9,12 +9,7 @@ def value_iteration_step(values, transitions, rewards, gamma):
     transitions = np.asarray(transitions)
     rewards = np.asarray(rewards)
 
-    ans = []
+    q = rewards + gamma * np.dot(transitions, values) 
+    ans = np.max(q, axis=1)
 
-    for s in range(len(transitions)):
-        max_q = -np.inf
-        q = rewards[s] + gamma * np.dot(transitions[s], values)
-        max_q = np.max(q)
-        ans.append(max_q)
-
-    return ans
+    return ans.tolist()
