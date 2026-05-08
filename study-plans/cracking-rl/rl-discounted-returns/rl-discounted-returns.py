@@ -17,4 +17,4 @@ def discounted_returns(rewards, gamma):
         running = float(rewards[t]) + gamma*running
         G[t] = round(running,4)
 
-    return G
+    return [round(g,4) for g in G]
