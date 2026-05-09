@@ -13,12 +13,8 @@ def bellman_expectation_backup(P, R, policy, gamma, V):
     
     V_new = np.zeros(S, np.float64)
     
-    for s in range(S):
-        running = 0.0
-        for a in range(A):
-            for sp in range(S):
-                running += policy[s][a] * P[s][a][sp] * ( R[s][a][sp] + gamma*V[sp])
-                V_new[s] = round(running, 4)
+    Q = np.sum(P * (R + gamma * V), axis=2)
+    V_new = np.sum(policy * Q, axis=1)
 
 
-    return V_new
+    return [round(v_new,4) for v_new in V_new]
