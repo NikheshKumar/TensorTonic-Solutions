@@ -1,23 +1,18 @@
 import numpy as np
-import math
 
 def poisson_pmf_cdf(lam, k):
     """
     Compute Poisson PMF and CDF.
     """
     # Write code here
-    indices = np.arange(k+1)
-    arr = np.ones(k+1)
+    def pmf(l, i):
+        if i == 0:
+            return np.exp(-l)
+        return (np.exp(-l) * (l**i)) / np.prod(np.arange(1, i + 1))
 
-    if k<0:
-      return 0.0, 0.0
-    else:
-      arr[1:] = np.cumprod(np.arange(1, k + 1))
 
-    arr = np.exp(-lam) * (lam**indices) / arr
-
-    pmf = arr[-1]
-
+    arr = [pmf(lam,i) for i in range(k+1)]
     cdf = np.sum(arr)
 
-    return float(pmf), float(cdf)
+
+    return pmf(lam, k).astype(np.float64), float(cdf)
