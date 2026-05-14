@@ -21,7 +21,6 @@ def batch_norm(X, gamma, beta, running_mean, running_var, mode):
         y = gamma * X_new + beta
         
         running_mean = (1-m)*(running_mean) + m*mu
-        sample_var = np.var(X, axis=0, ddof=1)
         running_var = (1 - m) * running_var + m * var
 
 
