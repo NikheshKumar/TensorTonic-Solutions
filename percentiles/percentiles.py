@@ -9,4 +9,4 @@ def percentiles(x, q):
 
     ans = np.percentile(x, q, method='linear')
 
-    return ans
+    return np.sort(ans)
