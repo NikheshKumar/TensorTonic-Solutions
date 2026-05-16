@@ -6,7 +6,10 @@ def percentiles(x, q):
     """
     # Write code here
     x = np.asarray(x, np.float64)
+    q = np.asarray(q, np.float64)
+
+    x = np.sort(x)
 
     ans = np.percentile(x, q, method='linear')
 
-    return np.sort(ans)
+    return ans
