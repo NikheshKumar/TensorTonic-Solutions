@@ -9,23 +9,23 @@ def policy_gradient_loss(log_probs, rewards, gamma):
     rewards = np.asarray(rewards, np.float64)
 
     T = len(rewards)
-    
+
     if T==0:
         return 0.0
 
     G = np.zeros((T,), np.float64)
-    
     G[-1] = rewards[-1].astype(np.float64)
+    
+    running = 0.0
 
-    for t in range(T-2, -1, -1):
-        G[t] = rewards[t] + gamma*G[t+1]
+    for t in reversed(range(T)):
 
-    mean_G = np.mean(G)
+        running = rewards[t] + gamma * running
+        G[t] = running
 
-    adv = G - mean_G
+    A = G - np.mean(G)
 
-    loss = -np.mean(log_probs * adv)
+    loss = -np.mean(log_probs * A)
 
     return float(loss)
-    
     
