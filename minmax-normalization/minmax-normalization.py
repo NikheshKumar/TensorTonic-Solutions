@@ -6,18 +6,8 @@ def minmax_scale(X, axis=0, eps=1e-12):
     Return np.ndarray (float).
     """
     # Write code here
-    X = np.asarray(X)
-
-    min_x = np.min(X, axis=axis, keepdims=True)
-    max_x = np.max(X, axis=axis, keepdims=True)
-
-    denominator = (max_x - min_x)
-
-    X_new = (X - min_x) / np.maximum(denominator, eps)
-
-    return X_new.tolist()
-
-    
+    X =np.asarray(X, np.float64)
+    X_new = (X - np.min(X, axis=axis, keepdims=True)) / (np.max(X, axis=axis, keepdims=True) - np.min(X, axis=axis, keepdims=True) + eps)
 
 
-  
+    return X_new
