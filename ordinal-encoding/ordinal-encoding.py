@@ -4,10 +4,13 @@ def ordinal_encoding(values, ordering):
     """
     # Write code here
     import numpy as np 
+
     values = np.asarray(values)
-  
-    enc = {cla:i for i,cla in enumerate(ordering)}
 
-    res = [enc.get(v) for v in values]
+    d = {ordering[i]:i for i in range(len(ordering))}
 
-    return res
+    ans = [d[v] for v in values]
+
+    return ans
+
+    
