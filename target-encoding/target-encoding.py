@@ -4,18 +4,26 @@ def target_encoding(categories, targets):
     """
     # Write code here
     import numpy as np 
-    from collections import defaultdict
 
     categories = np.asarray(categories)
     targets = np.asarray(targets)
 
-    d = defaultdict(float)
-    c = defaultdict(float)
+    n = len(categories)
 
-    for item, t in zip(categories, targets):
-      d[item] += t
-      c[item] += 1
+    if n==0:
+        return []
 
-    ans = [ d[item]/c[item] for item in categories]
+    t_sums = {}
+    count = {}
+
+    for i, cat in enumerate(categories):
+        if cat not in t_sums:
+            t_sums[cat] = 0.0
+            count[cat] = 0
+            
+        t_sums[cat] += float(targets[i])
+        count[cat] += 1
+
+    ans = [float(t_sums[cat]/count[cat]) for cat in categories]
 
     return ans
