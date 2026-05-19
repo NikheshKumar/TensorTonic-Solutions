@@ -5,12 +5,13 @@ def expected_value_discrete(x, p):
     Returns: float expected value
     """
     # Write code here
-    x, p = np.asarray(x, int), np.asarray(p, float)
+    x = np.asarray(x, np.float64)
+    p = np.asarray(p, np.float64)
 
-    E = np.sum(x*p)
+    if x.shape != p.shape:
+        raise ValueError("x and p should have same shape")
 
-    tot = np.sum(p)
-    if abs(tot - 1.0) > 1e-6:
-        raise ValueError("Probabilities do not sum to 1 (within tolerance)")
+    if not np.allclose(np.sum(p), 1.0, atol=1e-6):
+        raise ValueError("Probabilities must sum to 1")
 
-    return E    
+    return float(np.sum(x*p))
