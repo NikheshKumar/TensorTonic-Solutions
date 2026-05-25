@@ -4,19 +4,17 @@ def min_max_scaling(data):
     """
     # Write code here
     import numpy as np 
-    
-    data = np.asarray(data, float)   
 
-    data_min = np.min(data, axis=0)
-    data_max = np.max(data, axis=0)
+    x = np.asarray(data, dtype=np.float64)
 
-    data_diff = data_max - data_min
+    min_x = np.min(x, axis=0)
+    max_x = np.max(x, axis=0)
 
-    data_diff[data_diff==0.0] = 1.0 
+    den = (max_x - min_x)
 
-    data_new = (data - data_min) / data_diff  
+    den[den==0.0] = 1.0
 
-    return data_new.tolist()  
-  
-  
-  
+    x_new = (x-min_x) / den
+
+
+    return x_new.tolist()
