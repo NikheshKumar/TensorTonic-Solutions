@@ -5,14 +5,13 @@ def poisson_pmf_cdf(lam, k):
     Compute Poisson PMF and CDF.
     """
     # Write code here
-    def pmf(l, i):
-        if i == 0:
-            return np.exp(-l)
-        return (np.exp(-l) * (l**i)) / np.prod(np.arange(1, i + 1))
+
+    def fac(x):
+        return np.prod(np.arange(1,x+1))
+        
+    pmf = [np.exp(-lam) * (lam**i) / fac(i) for i in range(k+1)]
+
+    cdf = np.sum(pmf)
 
 
-    arr = [pmf(lam,i) for i in range(k+1)]
-    cdf = np.sum(arr)
-
-
-    return pmf(lam, k).astype(np.float64), float(cdf)
+    return pmf[-1], float(cdf)
