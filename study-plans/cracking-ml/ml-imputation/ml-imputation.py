@@ -32,4 +32,4 @@ def impute(X, method="mean"):
         X[mask[:, i], i] = m[i]
         
 
-    return X
+    return np.round(X, 4).tolist()
