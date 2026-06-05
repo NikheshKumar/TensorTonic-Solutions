@@ -15,10 +15,16 @@ def maxpool_forward(X, pool_size, stride):
 
     out = np.zeros((H_out, W_out), dtype=np.float64)
 
-    for i in range(H_out):
-        for j in range(W_out):
-            window = X[i*stride:i*stride+pool_size, j*stride:j*stride+pool_size]
-            out[i,j] = np.max(window)
+    s_H, s_W = X.strides
+
+    tensor_shape = (H_out, W_out, pool_size, pool_size)
+    strides_shape = (stride * s_H, stride * s_W, s_H, s_W)
+
+    windows = np.lib.stride_tricks.as_strided(
+        X, shape=tensor_shape, strides=strides_shape, writeable=False
+    )
+
+    out = np.max(windows, axis=(-2,-1))
 
 
     return out.tolist()
