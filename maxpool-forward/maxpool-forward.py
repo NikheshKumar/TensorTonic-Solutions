@@ -5,20 +5,20 @@ def maxpool_forward(X, pool_size, stride):
     # Write code here
     import numpy as np 
 
-    X = np.asarray(X)
+
+    X = np.array(X, dtype=np.float64)
+
     H, W = X.shape
 
-    h_out = ((H - pool_size) // stride)  + 1
-    w_out = ((W - pool_size) // stride) + 1
+    H_out = (H-pool_size)//stride + 1
+    W_out = (W-pool_size)//stride + 1
 
-    output = np.zeros((h_out, w_out), float)
+    out = np.zeros((H_out, W_out), dtype=np.float64)
 
-    for i in range(h_out):
-        for j in range(w_out):
-            output[i,j] = np.max(X[i*stride : i*stride + pool_size, j*stride : j*stride + pool_size])
-
-    return output.tolist()        
-
+    for i in range(H_out):
+        for j in range(W_out):
+            window = X[i*stride:i*stride+pool_size, j*stride:j*stride+pool_size]
+            out[i,j] = np.max(window)
 
 
-
+    return out.tolist()
