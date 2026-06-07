@@ -39,6 +39,6 @@ def transposed_conv2d(input, filters, bias=None, stride=1, padding=0):
         output += np.asarray(bias, dtype=np.float64).reshape(-1, 1, 1)
 
 
-    return output
+    return np.round(output, 4).tolist()
 
   
