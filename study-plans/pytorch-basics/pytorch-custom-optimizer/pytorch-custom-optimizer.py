@@ -28,14 +28,11 @@ class CustomSGD(torch.optim.Optimizer):
 
                 dp = p.grad.data
 
-                if mom != 0:
-                    state = self.state[p]
-                    if 'velocity' not in state:
-                        state['velocity'] = torch.zeros_like(p.data)
-                    v = state['velocity']
-                    v.mul_(mom).add_(dp)
-                    p.data.add_(v, alpha=-lr)
-                else:
-                    p.data.add_(dp, alpha=-lr)
+                state = self.state[p]
+                if 'velocity' not in state:
+                    state['velocity'] = torch.zeros_like(p.data)
+                v = state['velocity']
+                v.mul_(mom).add_(dp)
+                p.data.add_(v, alpha=-lr)
         
         return loss
