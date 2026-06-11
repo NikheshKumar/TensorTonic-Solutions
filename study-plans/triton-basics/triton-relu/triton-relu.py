@@ -11,7 +11,7 @@ def relu_kernel(x_ptr, out_ptr, n, BLOCK_SIZE: tl.constexpr):
     m = offset < n
 
     x = tl.load(x_ptr + offset, mask = m)
-    tl.store(out_ptr + offset, max(x, 0), mask=m)
+    tl.store(out_ptr + offset, tl.maximum(x, 0.0), mask=m)
 
     
 
