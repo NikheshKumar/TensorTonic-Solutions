@@ -25,36 +25,37 @@ class WordPieceTokenizer:
         Tokenize a single word into subwords.
         """
         # YOUR CODE HERE
-
         if len(word) > self.max_word_len:
             return [self.unk_token]
 
-        output = []
-        
+        res = []
         start = 0
 
-        while start < len(word):
+        while start<len(word):
+            
             end = len(word)
             curr = None
 
-            while start < end:
-                sub = word[start:end]
-                
-                if start>0:
-                    sub = "##" + sub
+            while start<end:
+                subword = word[start:end]
 
-                if sub in self.vocab:
-                    output.append(sub)
-                    curr = sub 
-                    break 
+                if start >0 :
+                    subword = "##" + subword
                     
-                end -= 1
-    
+                if subword in self.vocab :
+                    res.append(subword)
+                    curr = subword
+
+                    break
+
+                end -=1
+                
             if curr is None:
                 return [self.unk_token]
 
             start = end
 
-        return output
-
-        
+        return res
+            
+            
+            
