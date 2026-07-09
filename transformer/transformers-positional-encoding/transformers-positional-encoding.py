@@ -5,15 +5,15 @@ def positional_encoding(seq_length: int, d_model: int) -> np.ndarray:
     Generate sinusoidal positional encodings.
     """
     # Your code here
-    pe = np.zeros((seq_length, d_model))
     
+    pe_matrix = np.zeros((seq_length, d_model), np.float64)
     pos = np.arange(seq_length).reshape(-1,1)
 
-    i = np.arange(0,d_model,2)
+    pe_matrix[:,0::2] = np.sin(pos * np.exp(np.arange(0, d_model, 2) * (-np.log(10000.0) / d_model)))
+    
+    pe_matrix[:,1::2] = np.cos(pos * np.exp(np.arange(0, d_model, 2) * (-np.log(10000.0) / d_model)))
 
-    angles = pos * np.exp(i*(-np.log(1e4))/d_model)
 
-    pe[:,0::2] = np.sin(angles[:, :(d_model + 1) // 2])
-    pe[:,1::2] = np.cos([angles[:, :d_model // 2]])
+    return pe_matrix
 
-    return pe
+    
