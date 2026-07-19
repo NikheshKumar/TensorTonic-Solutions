@@ -9,9 +9,11 @@ def causal_attention(Q, K, V):
     B, S_q, d_k = Q.shape
     _, S_k, _ = K.shape
 
-    M = torch.triu(torch.full((S_q, S_k), -float('inf'), device=Q.device), diagonal=1)
+    scores = (Q @ K.transpose(-2,-1) / math.sqrt(d_k))
 
-    scores = (Q @ K.transpose(-2,-1) / math.sqrt(d_k)) + M
+    M = torch.triu(torch.ones(S_q, S_k, dtype=torch.bool, device=Q.device), diagonal=1)
+
+    scores.masked_fill_(M, -float('inf'))
 
     weights = torch.softmax(scores, dim=-1)
 
