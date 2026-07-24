@@ -17,7 +17,7 @@ def classify_critical_point(H):
     elif np.any(np.abs(evals) <= 1e-6):
         return "degenerate"
 
-    elif np.max(evals) >  1e-6 and np.min(evals) < 1e-6 and np.min(np.abs(evals)):
+    elif np.max(evals) >  1e-6 and np.min(evals) < 1e-6 and np.min(np.abs(evals))>1e-6:
         return "saddle"
 
     else:
