@@ -4,6 +4,6 @@ def quadratic_minimum(a, b, c):
     """
     x_star = -b / (2.0 * a)
 
-    f_min = c - b*b/(4.0*a)
+    f_min = c - (b**2)/(4.0*a)
 
     return {"x_star":x_star, "f_min":f_min}
