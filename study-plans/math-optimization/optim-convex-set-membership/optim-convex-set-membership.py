@@ -13,4 +13,4 @@ def convex_set_membership(A, b, x):
 
     in_set = bool(max_violation <= 1e-6)
 
-    return {"in_set":in_set, "max_violation":max_violation}
+    return {"in_set":in_set, "max_violation":np.round(max_violation,6)}
