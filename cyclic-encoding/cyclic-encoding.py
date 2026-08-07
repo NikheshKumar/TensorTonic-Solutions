@@ -4,11 +4,9 @@ def cyclic_encoding(values, period):
     """
     # Write code here
     import numpy as np 
+    
+    values = np.asarray(values, dtype=np.float64)
 
-    values = np.asarray(values)
+    theta = 2*np.pi*values/period
 
-    theta = 2*np.pi*values / period
-
-    encoded = np.column_stack( (np.sin(theta), np.cos(theta)) )
-
-    return encoded.tolist()
+    return np.column_stack([np.sin(theta), np.cos(theta)]).tolist()
