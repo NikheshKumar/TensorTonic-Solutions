@@ -271,6 +271,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | VGG Max Pooling | Implement VGG 2x2 max pooling with stride two while preserving the input batch and channel dimensions. | https://www.tensortonic.com/research/vgg/vgg-maxpool |
 | CBOW Forward Pass | Implement the Word2Vec CBOW forward pass by averaging context embeddings and producing vocabulary logits. | https://www.tensortonic.com/research/word2vec/word2vec-cbow-forward |
 | Negative Sampling Distribution | Build the Word2Vec negative-sampling distribution from unigram counts raised to the three-quarter power. | https://www.tensortonic.com/research/word2vec/word2vec-noise-dist |
+| SGNS Gradient Step | Implement one SGNS optimization step with positive and negative samples and in-place embedding gradient updates. | https://www.tensortonic.com/research/word2vec/word2vec-sgns-step |
 | Skip-gram Pair Generation | Generate Word2Vec skip-gram training pairs by pairing each center token with words inside its context window. | https://www.tensortonic.com/research/word2vec/word2vec-skipgram-pairs |
 | Frequent-Word Subsampling | Implement Word2Vec frequent-word subsampling by computing token retention probabilities from corpus frequencies. | https://www.tensortonic.com/research/word2vec/word2vec-subsampling |
 | Per-Channel Mean and Std | Compute population means and standard deviations for every channel across a batch of images in NHWC layout. | https://www.tensortonic.com/study-plans/cracking-cv/cv-channel-statistics |
