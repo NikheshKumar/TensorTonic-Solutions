@@ -221,6 +221,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | GAN Discriminator | Implement a GAN discriminator that maps input samples through dense layers to real-versus-fake probabilities. | https://www.tensortonic.com/research/gan/gan-discriminator |
 | GAN Generator | Implement a GAN generator that transforms latent noise through learned dense layers into generated samples. | https://www.tensortonic.com/research/gan/gan-generator |
 | GAN Loss Functions | Compute numerically stable binary cross-entropy losses for the GAN generator and discriminator objectives. | https://www.tensortonic.com/research/gan/gan-loss |
+| Gemma 3 Attention Block | Implement a Gemma 3 attention block with QK normalization, rotary embeddings, and global or sliding-window masks. | https://www.tensortonic.com/research/gemma3/gemma3-attention-block |
 | Global vs Local Attention Layer Routing | Route Gemma 3 layers between global and local attention according to the configured layer pattern. | https://www.tensortonic.com/research/gemma3/gemma3-layer-routing |
 | QK-Norm | Apply Gemma 3 query-key normalization independently to attention heads before computing attention scores. | https://www.tensortonic.com/research/gemma3/gemma3-qk-norm |
 | Sliding Window Attention | Create Gemma 3 sliding-window causal attention masks that restrict each query to recent preceding tokens. | https://www.tensortonic.com/research/gemma3/gemma3-sliding-window |
