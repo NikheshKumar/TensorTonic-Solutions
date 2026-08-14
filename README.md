@@ -233,6 +233,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Reset Gate | Implement a GRU reset gate that controls how much of the previous hidden state contributes to the candidate state. | https://www.tensortonic.com/research/gru/gru-reset-gate |
 | Update Gate | Implement a GRU update gate that balances retained hidden memory against the new candidate representation. | https://www.tensortonic.com/research/gru/gru-update-gate |
 | Llama 3 Transformer Block | Assemble a Llama Transformer block with RMSNorm, grouped-query attention, SwiGLU, and residual connections. | https://www.tensortonic.com/research/llama/llama-block |
+| Full Llama 3 Forward Pass | Build the full Llama forward pass from token embeddings through Transformer blocks to vocabulary logits. | https://www.tensortonic.com/research/llama/llama-forward |
 | Grouped Query Attention | Implement Llama grouped-query attention with more query heads than key-value heads and causal masking. | https://www.tensortonic.com/research/llama/llama-gqa |
 | KV Head Repeat | Repeat Llama key and value heads so grouped-query attention aligns them with the full query-head count. | https://www.tensortonic.com/research/llama/llama-kv-repeat |
 | RMSNorm | Implement Llama RMSNorm by scaling hidden states with their root-mean-square magnitude and learned weights. | https://www.tensortonic.com/research/llama/llama-rmsnorm |
