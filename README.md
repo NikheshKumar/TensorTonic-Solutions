@@ -226,6 +226,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Global vs Local Attention Layer Routing | Route Gemma 3 layers between global and local attention according to the configured layer pattern. | https://www.tensortonic.com/research/gemma3/gemma3-layer-routing |
 | QK-Norm | Apply Gemma 3 query-key normalization independently to attention heads before computing attention scores. | https://www.tensortonic.com/research/gemma3/gemma3-qk-norm |
 | Sliding Window Attention | Create Gemma 3 sliding-window causal attention masks that restrict each query to recent preceding tokens. | https://www.tensortonic.com/research/gemma3/gemma3-sliding-window |
+| Scaled Dot-Product Attention | Implement GPT-2 scaled dot-product attention from query-key scores, softmax weights, and value aggregation. | https://www.tensortonic.com/research/gpt2/gpt2-attention |
 | BPE Encode and Decode | Implement GPT-2 BPE encoding and decoding by applying learned merges and reconstructing the original token sequence. | https://www.tensortonic.com/research/gpt2/gpt2-bpe-encode-decode |
 | BPE Training | Train a GPT-2 byte-pair encoding vocabulary by repeatedly merging the most frequent adjacent token pair. | https://www.tensortonic.com/research/gpt2/gpt2-bpe-training |
 | Token + Positional Embedding | Build GPT-2 input representations by summing learned token embeddings with learned positional embeddings. | https://www.tensortonic.com/research/gpt2/gpt2-embedding |
