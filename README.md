@@ -236,6 +236,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Hidden State Update | Implement the GRU hidden-state interpolation between the previous state and candidate using the update gate. | https://www.tensortonic.com/research/gru/gru-hidden-update |
 | Reset Gate | Implement a GRU reset gate that controls how much of the previous hidden state contributes to the candidate state. | https://www.tensortonic.com/research/gru/gru-reset-gate |
 | Update Gate | Implement a GRU update gate that balances retained hidden memory against the new candidate representation. | https://www.tensortonic.com/research/gru/gru-update-gate |
+| Gated MLA | Build Kimi K3 Gated MLA with low-rank query and KV projections, per-head gating, RoPE inputs, and latent caching. | https://www.tensortonic.com/research/kimik3/k3-gated-mla |
 | KDA Recurrence | Implement Kimi K3's KDA recurrence with gated state updates, normalized queries and keys, and ordered token readouts. | https://www.tensortonic.com/research/kimik3/k3-kda-recurrence |
 | Llama 3 Transformer Block | Assemble a Llama Transformer block with RMSNorm, grouped-query attention, SwiGLU, and residual connections. | https://www.tensortonic.com/research/llama/llama-block |
 | Full Llama 3 Forward Pass | Build the full Llama forward pass from token embeddings through Transformer blocks to vocabulary logits. | https://www.tensortonic.com/research/llama/llama-forward |
