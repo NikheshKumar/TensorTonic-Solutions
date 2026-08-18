@@ -221,6 +221,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Decoupled RoPE for Compressed Keys | Apply DeepSeek V3 decoupled RoPE to the positional key and query components outside the compressed content path. | https://www.tensortonic.com/research/deepseekv3/ds3-decoupled-rope |
 | KV Compression via Low-Rank Down-Projection | Implement DeepSeek V3 KV compression by projecting hidden states into a shared low-rank attention latent. | https://www.tensortonic.com/research/deepseekv3/ds3-kv-compress |
 | KV Reconstruction via Up-Projection | Reconstruct DeepSeek V3 key and value representations by up-projecting the compressed KV latent for each head. | https://www.tensortonic.com/research/deepseekv3/ds3-kv-reconstruct |
+| Multi-head Latent Attention (MLA) | Build DeepSeek V3 multi-head latent attention with KV compression, decoupled RoPE, causal masking, and output projection. | https://www.tensortonic.com/research/deepseekv3/ds3-mla |
 | GAN Discriminator | Implement a GAN discriminator that maps input samples through dense layers to real-versus-fake probabilities. | https://www.tensortonic.com/research/gan/gan-discriminator |
 | GAN Generator | Implement a GAN generator that transforms latent noise through learned dense layers into generated samples. | https://www.tensortonic.com/research/gan/gan-generator |
 | GAN Loss Functions | Compute numerically stable binary cross-entropy losses for the GAN generator and discriminator objectives. | https://www.tensortonic.com/research/gan/gan-loss |
