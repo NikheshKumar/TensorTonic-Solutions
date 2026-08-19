@@ -219,6 +219,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | DDPM Sampling | Implement iterative DDPM sampling from Gaussian noise by applying the learned reverse process over all timesteps. | https://www.tensortonic.com/research/ddpm/ddpm-sampling |
 | Noise Schedule | Generate a DDPM noise schedule with beta values and cumulative alpha products used across diffusion timesteps. | https://www.tensortonic.com/research/ddpm/ddpm-schedule |
 | Decoupled RoPE for Compressed Keys | Apply DeepSeek V3 decoupled RoPE to the positional key and query components outside the compressed content path. | https://www.tensortonic.com/research/deepseekv3/ds3-decoupled-rope |
+| Dense Prefix Layers before MoE | Route early DeepSeek V3 Transformer layers through dense feed-forward blocks before switching to sparse MoE. | https://www.tensortonic.com/research/deepseekv3/ds3-dense-prefix |
 | KV Compression via Low-Rank Down-Projection | Implement DeepSeek V3 KV compression by projecting hidden states into a shared low-rank attention latent. | https://www.tensortonic.com/research/deepseekv3/ds3-kv-compress |
 | KV Reconstruction via Up-Projection | Reconstruct DeepSeek V3 key and value representations by up-projecting the compressed KV latent for each head. | https://www.tensortonic.com/research/deepseekv3/ds3-kv-reconstruct |
 | Auxiliary-Loss-Free Load Balancing | Implement DeepSeek V3 auxiliary-loss-free load balancing by updating expert routing biases from observed loads. | https://www.tensortonic.com/research/deepseekv3/ds3-load-balance |
