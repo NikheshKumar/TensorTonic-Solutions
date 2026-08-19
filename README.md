@@ -223,6 +223,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | KV Reconstruction via Up-Projection | Reconstruct DeepSeek V3 key and value representations by up-projecting the compressed KV latent for each head. | https://www.tensortonic.com/research/deepseekv3/ds3-kv-reconstruct |
 | Multi-head Latent Attention (MLA) | Build DeepSeek V3 multi-head latent attention with KV compression, decoupled RoPE, causal masking, and output projection. | https://www.tensortonic.com/research/deepseekv3/ds3-mla |
 | MoE Router with Top-k Expert Selection | Implement the DeepSeek V3 MoE router with expert scores, top-k selection, and normalized routing weights. | https://www.tensortonic.com/research/deepseekv3/ds3-moe-router |
+| Shared Expert Mechanism | Implement the DeepSeek V3 shared expert path and combine its dense output with routed expert outputs. | https://www.tensortonic.com/research/deepseekv3/ds3-shared-expert |
 | GAN Discriminator | Implement a GAN discriminator that maps input samples through dense layers to real-versus-fake probabilities. | https://www.tensortonic.com/research/gan/gan-discriminator |
 | GAN Generator | Implement a GAN generator that transforms latent noise through learned dense layers into generated samples. | https://www.tensortonic.com/research/gan/gan-generator |
 | GAN Loss Functions | Compute numerically stable binary cross-entropy losses for the GAN generator and discriminator objectives. | https://www.tensortonic.com/research/gan/gan-loss |
