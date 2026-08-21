@@ -210,6 +210,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Implement z-Score Standardization | Standardize NumPy features to zero mean and unit variance with explicit handling for constant columns. | https://www.tensortonic.com/problems/zscore-standardization |
 | Gated Attention | Implement Arcee Trinity gated attention by modulating each attention head's output with learned sigmoid gates. | https://www.tensortonic.com/research/arcee-trinity/at-gated-attn |
 | Sigmoid MoE Router | Implement Arcee Trinity's sigmoid MoE router with top-k expert selection and normalized routing weights. | https://www.tensortonic.com/research/arcee-trinity/at-sigmoid-router |
+| SMEBU Load Balancing | Implement Arcee Trinity SMEBU load balancing by updating expert biases from token-assignment imbalance. | https://www.tensortonic.com/research/arcee-trinity/at-smebu |
 | Fine-tuning Architecture | Build BERT fine-tuning utilities for freezing encoder layers and producing sequence or token classification logits. | https://www.tensortonic.com/research/bert/bert-fine-tuning |
 | Next Sentence Prediction | Create BERT next-sentence prediction pairs and compute binary classification logits for IsNext and NotNext examples. | https://www.tensortonic.com/research/bert/bert-nsp |
 | BERT Pooler | Implement the BERT pooler by projecting the first token's hidden state through a dense layer and tanh activation. | https://www.tensortonic.com/research/bert/bert-pooler |
