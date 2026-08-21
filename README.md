@@ -209,6 +209,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Xavier Initialization | Scale raw weights into the Xavier uniform range using a bound derived from fan-in and fan-out. | https://www.tensortonic.com/problems/xavier-initialization |
 | Implement z-Score Standardization | Standardize NumPy features to zero mean and unit variance with explicit handling for constant columns. | https://www.tensortonic.com/problems/zscore-standardization |
 | Gated Attention | Implement Arcee Trinity gated attention by modulating each attention head's output with learned sigmoid gates. | https://www.tensortonic.com/research/arcee-trinity/at-gated-attn |
+| NoPE: Causal Attention Without Positional Encoding | Build an Arcee Trinity NoPE causal attention layer that computes masked attention without positional embeddings. | https://www.tensortonic.com/research/arcee-trinity/at-nope |
 | Sandwich Norm with Depth Scaling | Implement Arcee Trinity sandwich normalization around sublayers with depth-dependent residual scaling. | https://www.tensortonic.com/research/arcee-trinity/at-sandwich-norm |
 | Sigmoid MoE Router | Implement Arcee Trinity's sigmoid MoE router with top-k expert selection and normalized routing weights. | https://www.tensortonic.com/research/arcee-trinity/at-sigmoid-router |
 | SMEBU Load Balancing | Implement Arcee Trinity SMEBU load balancing by updating expert biases from token-assignment imbalance. | https://www.tensortonic.com/research/arcee-trinity/at-smebu |
