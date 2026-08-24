@@ -246,6 +246,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | BPE Training | Train a GPT-2 byte-pair encoding vocabulary by repeatedly merging the most frequent adjacent token pair. | https://www.tensortonic.com/research/gpt2/gpt2-bpe-training |
 | Causal (Masked) Self-Attention | Implement GPT-2 causal self-attention with an upper-triangular mask that blocks access to future tokens. | https://www.tensortonic.com/research/gpt2/gpt2-causal-attention |
 | Token + Positional Embedding | Build GPT-2 input representations by summing learned token embeddings with learned positional embeddings. | https://www.tensortonic.com/research/gpt2/gpt2-embedding |
+| GELU Activation | Implement GPT-2's tanh-based GELU approximation for smooth nonlinear activation of feed-forward features. | https://www.tensortonic.com/research/gpt2/gpt2-gelu |
 | Multi-Head Attention | Build GPT-2 multi-head attention with QKV projection, causal attention per head, concatenation, and output projection. | https://www.tensortonic.com/research/gpt2/gpt2-mha |
 | Attention Sinks (Learned Softmax Bias) | Add GPT-OSS attention sinks as learned softmax biases that give attention heads persistent virtual key positions. | https://www.tensortonic.com/research/gptoss/gpto-attention-sinks |
 | Sliding Window Causal Mask | Create a GPT-OSS sliding-window causal mask that exposes only the current token and its recent history. | https://www.tensortonic.com/research/gptoss/gpto-sliding-window-mask |
