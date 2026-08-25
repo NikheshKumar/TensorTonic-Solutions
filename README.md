@@ -250,6 +250,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Position-wise Feed-Forward Network | Implement the GPT-2 position-wise feed-forward network with expansion, GELU activation, and output projection. | https://www.tensortonic.com/research/gpt2/gpt2-ffn |
 | GPT-2 Forward Pass | Build the GPT-2 forward pass from token and position embeddings through decoder blocks to vocabulary logits. | https://www.tensortonic.com/research/gpt2/gpt2-forward |
 | GELU Activation | Implement GPT-2's tanh-based GELU approximation for smooth nonlinear activation of feed-forward features. | https://www.tensortonic.com/research/gpt2/gpt2-gelu |
+| Greedy Decoding | Implement GPT-2 greedy decoding by repeatedly selecting the highest-logit next token from the model output. | https://www.tensortonic.com/research/gpt2/gpt2-greedy-decode |
 | Residual Weight Scaling | Compute GPT-2 residual projection initialization scaling based on model width and decoder depth. | https://www.tensortonic.com/research/gpt2/gpt2-init-scaling |
 | Layer Normalization | Implement GPT-2 layer normalization with per-token statistics and learned scale and bias parameters. | https://www.tensortonic.com/research/gpt2/gpt2-layernorm |
 | Multi-Head Attention | Build GPT-2 multi-head attention with QKV projection, causal attention per head, concatenation, and output projection. | https://www.tensortonic.com/research/gpt2/gpt2-mha |
