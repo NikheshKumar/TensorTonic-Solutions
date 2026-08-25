@@ -249,6 +249,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Token + Positional Embedding | Build GPT-2 input representations by summing learned token embeddings with learned positional embeddings. | https://www.tensortonic.com/research/gpt2/gpt2-embedding |
 | Position-wise Feed-Forward Network | Implement the GPT-2 position-wise feed-forward network with expansion, GELU activation, and output projection. | https://www.tensortonic.com/research/gpt2/gpt2-ffn |
 | GELU Activation | Implement GPT-2's tanh-based GELU approximation for smooth nonlinear activation of feed-forward features. | https://www.tensortonic.com/research/gpt2/gpt2-gelu |
+| Residual Weight Scaling | Compute GPT-2 residual projection initialization scaling based on model width and decoder depth. | https://www.tensortonic.com/research/gpt2/gpt2-init-scaling |
 | Layer Normalization | Implement GPT-2 layer normalization with per-token statistics and learned scale and bias parameters. | https://www.tensortonic.com/research/gpt2/gpt2-layernorm |
 | Multi-Head Attention | Build GPT-2 multi-head attention with QKV projection, causal attention per head, concatenation, and output projection. | https://www.tensortonic.com/research/gpt2/gpt2-mha |
 | Attention Sinks (Learned Softmax Bias) | Add GPT-OSS attention sinks as learned softmax biases that give attention heads persistent virtual key positions. | https://www.tensortonic.com/research/gptoss/gpto-attention-sinks |
