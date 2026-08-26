@@ -255,6 +255,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Layer Normalization | Implement GPT-2 layer normalization with per-token statistics and learned scale and bias parameters. | https://www.tensortonic.com/research/gpt2/gpt2-layernorm |
 | Multi-Head Attention | Build GPT-2 multi-head attention with QKV projection, causal attention per head, concatenation, and output projection. | https://www.tensortonic.com/research/gpt2/gpt2-mha |
 | Attention Sinks (Learned Softmax Bias) | Add GPT-OSS attention sinks as learned softmax biases that give attention heads persistent virtual key positions. | https://www.tensortonic.com/research/gptoss/gpto-attention-sinks |
+| MoE Top-k Routing with Softmax-after-Topk | Implement GPT-OSS MoE routing with top-k expert selection followed by softmax normalization over selected scores. | https://www.tensortonic.com/research/gptoss/gpto-moe-routing |
 | Sliding Window Causal Mask | Create a GPT-OSS sliding-window causal mask that exposes only the current token and its recent history. | https://www.tensortonic.com/research/gptoss/gpto-sliding-window-mask |
 | YaRN Scaled RoPE | Implement GPT-OSS YaRN-scaled rotary embeddings with frequency interpolation for extended context lengths. | https://www.tensortonic.com/research/gptoss/gpto-yarn-rope |
 | Candidate Hidden State | Compute the GRU candidate hidden state from the current input and the reset-gated previous hidden state. | https://www.tensortonic.com/research/gru/gru-candidate |
