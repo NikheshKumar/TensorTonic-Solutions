@@ -254,6 +254,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Residual Weight Scaling | Compute GPT-2 residual projection initialization scaling based on model width and decoder depth. | https://www.tensortonic.com/research/gpt2/gpt2-init-scaling |
 | Layer Normalization | Implement GPT-2 layer normalization with per-token statistics and learned scale and bias parameters. | https://www.tensortonic.com/research/gpt2/gpt2-layernorm |
 | Multi-Head Attention | Build GPT-2 multi-head attention with QKV projection, causal attention per head, concatenation, and output projection. | https://www.tensortonic.com/research/gpt2/gpt2-mha |
+| Top-k Sampling | Implement GPT-2 top-k sampling with temperature scaling, probability normalization, and seeded token selection. | https://www.tensortonic.com/research/gpt2/gpt2-topk-sampling |
 | Attention Sinks (Learned Softmax Bias) | Add GPT-OSS attention sinks as learned softmax biases that give attention heads persistent virtual key positions. | https://www.tensortonic.com/research/gptoss/gpto-attention-sinks |
 | MoE Top-k Routing with Softmax-after-Topk | Implement GPT-OSS MoE routing with top-k expert selection followed by softmax normalization over selected scores. | https://www.tensortonic.com/research/gptoss/gpto-moe-routing |
 | Sliding Window Causal Mask | Create a GPT-OSS sliding-window causal mask that exposes only the current token and its recent history. | https://www.tensortonic.com/research/gptoss/gpto-sliding-window-mask |
