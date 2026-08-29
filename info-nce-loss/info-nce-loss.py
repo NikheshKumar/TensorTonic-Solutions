@@ -1,21 +1,23 @@
 import numpy as np
 
-def info_nce_loss(Z1, Z2, temperature=0.1):
+def info_nce_loss(Z1: list, Z2: list, temperature: float = 0.1) -> float:
     """
-    Compute InfoNCE Loss for contrastive learning.
+    Returns the loss as a float.
     """
     # Write code here
-    Z1 = np.asarray(Z1)
-    Z2 = np.asarray(Z2)
-
+    Z1 = np.asarray(Z1, dtype=np.float64)
+    Z2 = np.asarray(Z2, dtype=np.float64)
+    
     S = np.matmul(Z1, Z2.T) / temperature
 
-    S_stable = S - np.max(S)
+    max_val = np.max(S)
 
-    num = np.exp(np.diag(S_stable))
+    num = np.exp(np.diag(S - max_val))
 
-    den = np.sum(np.exp(S_stable), axis=1)
+    den = np.sum(np.exp(S - max_val), axis=1)
 
-    L = -np.mean(np.log(num/den), axis=0)
+    l = -np.mean(np.log(num/den), axis=0)
 
-    return float(L)
+    return float(l)
+
+    
