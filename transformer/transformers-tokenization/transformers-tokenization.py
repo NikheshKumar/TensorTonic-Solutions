@@ -24,54 +24,55 @@ class SimpleTokenizer:
         """
         # YOUR CODE HERE
 
-        sp_tokens = [self.pad_token, self.unk_token, self.bos_token, self.eos_token]
-        for i, t in enumerate(sp_tokens):
-            self.word_to_id[t] = i
-            self.id_to_word[i] = t
+        special_tokens = [self.pad_token, self.unk_token, self.bos_token, self.eos_token]
 
-        unique = set()
+        for i, tok in enumerate(special_tokens):
+            self.word_to_id[tok] = i
+            self.id_to_word[i] = tok
+
+        unique_words = set()
+
         for t in texts:
             w = t.lower().split()
             for token in w:
                 if token not in self.word_to_id:
-                    unique.add(token)
+                    unique_words.add(token)
+                
 
-        for w in sorted(unique):
+        for word in sorted(unique_words):
             i = len(self.word_to_id)
-            self.word_to_id[w] = i
-            self.id_to_word[i] = w
+            self.word_to_id[word] = i
+            self.id_to_word[i] = word
 
         self.vocab_size = len(self.word_to_id)
-        
+    
     def encode(self, text: str) -> List[int]:
         """
         Convert text to list of token IDs.
         Use UNK for unknown words.
         """
         # YOUR CODE HERE
-        words = text.lower().split()
+        text_new = text.lower().split()
 
         enc = []
+
         unk_id = self.word_to_id[self.unk_token]
-        
-        for w in words:
+
+        for w in text_new:
             enc_id = self.word_to_id.get(w, unk_id)
             enc.append(enc_id)
 
         return enc
-            
-            
     
     def decode(self, ids: List[int]) -> str:
         """
         Convert list of token IDs back to text.
         """
         # YOUR CODE HERE
-        res = []
-        
+        dec = []
+
         for i in ids:
             word = self.id_to_word.get(i, self.unk_token)
-            res.append(word)
+            dec.append(word)
 
-        return " ".join(res)
-            
+        return " ".join(dec)
