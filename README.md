@@ -233,6 +233,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | MoE Router with Top-k Expert Selection | Implement the DeepSeek V3 MoE router with expert scores, top-k selection, and normalized routing weights. | https://www.tensortonic.com/research/deepseekv3/ds3-moe-router |
 | Multi-Token Prediction Head | Implement the DeepSeek V3 multi-token prediction head that produces logits for multiple future-token offsets. | https://www.tensortonic.com/research/deepseekv3/ds3-mtp |
 | Shared Expert Mechanism | Implement the DeepSeek V3 shared expert path and combine its dense output with routed expert outputs. | https://www.tensortonic.com/research/deepseekv3/ds3-shared-expert |
+| Channel Growth and Compression | Compute DenseNet channel growth across dense blocks and transition compression from the initial channels and growth rate. | https://www.tensortonic.com/research/densenet/densenet-channels |
 | Composite Layer (BN-ReLU-Conv) | Implement a DenseNet composite layer with batch normalization, ReLU, convolution, and feature-map concatenation. | https://www.tensortonic.com/research/densenet/densenet-composite-layer |
 | GAN Discriminator | Implement a GAN discriminator that maps input samples through dense layers to real-versus-fake probabilities. | https://www.tensortonic.com/research/gan/gan-discriminator |
 | GAN Generator | Implement a GAN generator that transforms latent noise through learned dense layers into generated samples. | https://www.tensortonic.com/research/gan/gan-generator |
