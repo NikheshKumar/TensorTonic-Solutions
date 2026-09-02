@@ -210,6 +210,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Implement z-Score Standardization | Standardize NumPy features to zero mean and unit variance with explicit handling for constant columns. | https://www.tensortonic.com/problems/zscore-standardization |
 | AlexNet Convolution Layer | Implement an AlexNet convolutional layer with learned filters, bias, stride, padding, and multi-channel outputs. | https://www.tensortonic.com/research/alexnet/alexnet-conv-layers |
 | Dropout Regularization | Implement inverted dropout for AlexNet with seeded masks and training-versus-inference behavior. | https://www.tensortonic.com/research/alexnet/alexnet-dropout |
+| Overlapping Max Pooling | Implement AlexNet overlapping max pooling with a 3x3 window and stride two across spatial dimensions. | https://www.tensortonic.com/research/alexnet/alexnet-pooling |
 | ReLU Activation Function | Implement AlexNet's elementwise ReLU activation, preserving positive values while setting negative values to zero. | https://www.tensortonic.com/research/alexnet/alexnet-relu |
 | Gated Attention Output | Implement Arcee Trinity gated attention by modulating each attention head's output with learned sigmoid gates. | https://www.tensortonic.com/research/arcee-trinity/at-gated-attn |
 | Interleaved Local and Global Attention Mask | Route Arcee Trinity layers through an interleaved pattern of rotary-position and NoPE attention. | https://www.tensortonic.com/research/arcee-trinity/at-interleaved |
