@@ -211,6 +211,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Data Augmentation | Implement AlexNet image augmentation operations for deterministic crops, horizontal flips, and intensity changes. | https://www.tensortonic.com/research/alexnet/alexnet-augmentation |
 | AlexNet Convolution Layer | Implement an AlexNet convolutional layer with learned filters, bias, stride, padding, and multi-channel outputs. | https://www.tensortonic.com/research/alexnet/alexnet-conv-layers |
 | Dropout Regularization | Implement inverted dropout for AlexNet with seeded masks and training-versus-inference behavior. | https://www.tensortonic.com/research/alexnet/alexnet-dropout |
+| Local Response Normalization | Implement AlexNet local response normalization across neighboring channels using the paper's scaling equation. | https://www.tensortonic.com/research/alexnet/alexnet-lrn |
 | Overlapping Max Pooling | Implement AlexNet overlapping max pooling with a 3x3 window and stride two across spatial dimensions. | https://www.tensortonic.com/research/alexnet/alexnet-pooling |
 | ReLU Activation Function | Implement AlexNet's elementwise ReLU activation, preserving positive values while setting negative values to zero. | https://www.tensortonic.com/research/alexnet/alexnet-relu |
 | Gated Attention Output | Implement Arcee Trinity gated attention by modulating each attention head's output with learned sigmoid gates. | https://www.tensortonic.com/research/arcee-trinity/at-gated-attn |
