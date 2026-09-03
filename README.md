@@ -283,12 +283,12 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | SiTU-GLU | Implement Kimi K3 SiTU-GLU by combining sigmoid-tanh gated activations with an elementwise linear branch. | https://www.tensortonic.com/research/kimik3/k3-situ-glu |
 | Llama 3 Transformer Block | Assemble a Llama Transformer block with RMSNorm, grouped-query attention, SwiGLU, and residual connections. | https://www.tensortonic.com/research/llama/llama-block |
 | Full Llama 3 Forward Pass | Build the full Llama forward pass from token embeddings through Transformer blocks to vocabulary logits. | https://www.tensortonic.com/research/llama/llama-forward |
-| Grouped Query Attention | Implement Llama grouped-query attention with more query heads than key-value heads and causal masking. | https://www.tensortonic.com/research/llama/llama-gqa |
-| KV Head Repeat | Repeat Llama key and value heads so grouped-query attention aligns them with the full query-head count. | https://www.tensortonic.com/research/llama/llama-kv-repeat |
-| RMSNorm | Implement Llama RMSNorm by scaling hidden states with their root-mean-square magnitude and learned weights. | https://www.tensortonic.com/research/llama/llama-rmsnorm |
-| Rotary Positional Embeddings (RoPE) | Apply Llama rotary positional embeddings to query and key tensors by rotating paired feature dimensions. | https://www.tensortonic.com/research/llama/llama-rope |
-| RoPE Frequency Table | Build the Llama RoPE frequency table from token positions, head dimensions, and the rotary base. | https://www.tensortonic.com/research/llama/llama-rope-freqs |
-| SwiGLU FFN | Implement the Llama SwiGLU feed-forward network using SiLU-gated projections and an output projection. | https://www.tensortonic.com/research/llama/llama-swiglu |
+| Grouped-Query Causal Attention | Implement Llama grouped-query attention with more query heads than key-value heads and causal masking. | https://www.tensortonic.com/research/llama/llama-gqa |
+| Repeat Grouped Key-Value Heads | Repeat Llama key and value heads so grouped-query attention aligns them with the full query-head count. | https://www.tensortonic.com/research/llama/llama-kv-repeat |
+| Root Mean Square Normalization | Implement Llama RMSNorm by scaling hidden states with their root-mean-square magnitude and learned weights. | https://www.tensortonic.com/research/llama/llama-rmsnorm |
+| Apply Rotary Position Embeddings | Apply Llama rotary positional embeddings to query and key tensors by rotating paired feature dimensions. | https://www.tensortonic.com/research/llama/llama-rope |
+| Precompute RoPE Frequencies | Build the Llama RoPE frequency table from token positions, head dimensions, and the rotary base. | https://www.tensortonic.com/research/llama/llama-rope-freqs |
+| SwiGLU Feed-Forward Network | Implement the Llama SwiGLU feed-forward network using SiLU-gated projections and an output projection. | https://www.tensortonic.com/research/llama/llama-swiglu |
 | Complete LSTM Cell | Build a complete LSTM cell with forget, input, candidate, cell-state, output, and hidden-state calculations. | https://www.tensortonic.com/research/lstm/lstm-cell |
 | Cell State Update | Implement the LSTM cell-state update by combining retained memory with input-gated candidate information. | https://www.tensortonic.com/research/lstm/lstm-cell-state |
 | Forget Gate | Implement an LSTM forget gate by combining the previous hidden state and current input with a sigmoid projection. | https://www.tensortonic.com/research/lstm/lstm-forget-gate |
@@ -327,6 +327,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Reparameterization Trick | Implement the VAE reparameterization trick by sampling latent vectors from the predicted mean and log variance. | https://www.tensortonic.com/research/vae/vae-reparameterization |
 | VGG Conv Block | Implement a VGG convolutional block as sequential channel projections with ReLU activation at every spatial position. | https://www.tensortonic.com/research/vgg/vgg-conv-block |
 | VGG Max Pooling | Implement VGG 2x2 max pooling with stride two while preserving the input batch and channel dimensions. | https://www.tensortonic.com/research/vgg/vgg-maxpool |
+| Patch Embedding | Implement Vision Transformer patch embeddings by splitting images into fixed patches and linearly projecting each patch. | https://www.tensortonic.com/research/vit/vit-patch-embedding |
 | CBOW Forward Pass | Implement the Word2Vec CBOW forward pass by averaging context embeddings and producing vocabulary logits. | https://www.tensortonic.com/research/word2vec/word2vec-cbow-forward |
 | Negative Sampling Distribution | Build the Word2Vec negative-sampling distribution from unigram counts raised to the three-quarter power. | https://www.tensortonic.com/research/word2vec/word2vec-noise-dist |
 | Skip-gram Negative Sampling Loss | Implement skip-gram negative-sampling loss from center, positive-context, and negative-word embedding scores. | https://www.tensortonic.com/research/word2vec/word2vec-sgns-loss |
