@@ -1,19 +1,16 @@
 import numpy as np
 
-def discriminator_loss(real_probs: np.ndarray, fake_probs: np.ndarray) -> float:
+def gan_losses(real_probs: np.ndarray, fake_probs: np.ndarray) -> dict:
     """
-    Compute discriminator loss.
+    Returns discriminator_loss and generator_loss as Python floats.
     """
-    # Your implementation here
     eps = 1e-8
-    ld = -np.mean(np.log(real_probs+eps))-np.mean(np.log(1-fake_probs+eps))
-    return ld
 
-def generator_loss(fake_probs: np.ndarray) -> float:
-    """
-    Compute generator loss.
-    """
-    # Your implementation here
-    eps = 1e-8
-    lg = -np.mean(np.log(fake_probs+eps))
-    return lg
+    real_probs = np.clip(real_probs, eps, 1-eps)
+    fake_probs = np.clip(fake_probs, eps, 1-eps)
+    
+    loss_d = -np.mean(np.log(real_probs) + np.log(1.0-fake_probs))
+
+    loss_g =-np.mean(np.log(fake_probs))
+
+    return {"discriminator_loss":float(loss_d), "generator_loss":float(loss_g)}
