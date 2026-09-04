@@ -4,13 +4,13 @@ def batch_norm_block(x, W1, W2, gamma1, beta1, gamma2, beta2, mode):
     """
     Returns the normalized residual-block result and selected mode in a dictionary.
     """
-    x = np.array(x, dtype=float)
-    W1 = np.array(W1, dtype=float)
-    W2 = np.array(W2, dtype=float)
-    gamma1 = np.array(gamma1, dtype=float)
-    beta1 = np.array(beta1, dtype=float)
-    gamma2 = np.array(gamma2, dtype=float)
-    beta2 = np.array(beta2, dtype=float)
+    x = np.array(x, dtype=np.float64)
+    W1 = np.array(W1, dtype=np.float64)
+    W2 = np.array(W2, dtype=np.float64)
+    gamma1 = np.array(gamma1, dtype=np.float64)
+    beta1 = np.array(beta1, dtype=np.float64)
+    gamma2 = np.array(gamma2, dtype=np.float64)
+    beta2 = np.array(beta2, dtype=np.float64)
 
     def batchnorm(z, gamma, beta):
         m = np.mean(z, axis=0)
@@ -50,5 +50,5 @@ def batch_norm_block(x, W1, W2, gamma1, beta1, gamma2, beta2, mode):
         #residual
         z = z + x
 
-    return {"output": [[round(float(v),4) for v in row] for row in z], "mode": mode}
+    return {"output": np.round(z,4).tolist(), "mode": mode}
         
