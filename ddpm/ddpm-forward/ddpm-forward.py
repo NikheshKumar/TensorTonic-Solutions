@@ -1,25 +1,24 @@
 import numpy as np
 
-def get_alpha_bar(betas: np.ndarray) -> np.ndarray:
+def get_alpha_bar(betas: list[float]) -> list[float]:
     """
-    Compute cumulative product of (1 - beta).
+    Returns the cumulative alpha-bar values rounded to six decimals.
     """
-    # YOUR CODE HERE
-    return np.cumprod(1.0-betas)
+    betas = np.array(betas, dtype=np.float64)
+    alpha_bar = np.cumprod(1.0 - betas)
+    return alpha_bar
 
-def forward_diffusion(
-    x_0: np.ndarray,
-    t: int,
-    betas: np.ndarray
-) -> tuple:
+def forward_diffusion(x_0: list, t: int, betas: list[float], epsilon: list) -> list:
     """
-    Sample x_t from q(x_t | x_0).
+    Returns x_t with the same nested shape as x_0.
     """
-    # YOUR CODE HERE
-    x_0 = np.asarray(x_0, float)
+    x_0  = np.array(x_0, dtype=np.float64)
+    betas = np.array(betas, dtype=np.float64)
+    epsilon = np.array(epsilon, dtype=np.float64)
+
     alpha_bar = get_alpha_bar(betas)
-    eps = np.random.randn(*x_0.shape)
 
-    x_t = x_0 * np.sqrt(alpha_bar[t]) + eps * np.sqrt(1-alpha_bar[t])
+    x_t = np.sqrt(alpha_bar[t-1]) * x_0 + np.sqrt(1.0- alpha_bar[t-1]) * epsilon
 
-    return x_t, eps
+    return x_t
+    
