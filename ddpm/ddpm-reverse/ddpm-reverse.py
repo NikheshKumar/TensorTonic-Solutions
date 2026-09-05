@@ -1,24 +1,30 @@
 import numpy as np
 
-def reverse_step(
-    x_t: np.ndarray,
-    t: int,
-    epsilon_pred: np.ndarray,
-    betas: np.ndarray
-) -> np.ndarray:
+def reverse_step(x_t: list, t: int, epsilon_pred: list, betas: list[float], z: list = None) -> list:
     """
-    Perform one reverse diffusion step.
+    Returns x at timestep t - 1, rounded to four decimals.
     """
-    # YOUR CODE HERE
-    x_t = np.asarray(x_t, float)
+    
+    x_t = np.array(x_t, dtype=np.float64)
+    betas = np.array(betas, dtype=np.float64)
+    epsilon_pred = np.array(epsilon_pred, dtype=np.float64)
+    
+    if z is not None and len(z) > 0:
+        z = np.array(z, dtype=np.float64)
+    else:
+        z = np.zeros_like(x_t)
+
+    
     alphas = 1.0 - betas
-    alpha_bars = np.cumprod(alphas)
+    alpha_bar = np.cumprod(alphas)
 
-    z = np.random.randn(*x_t.shape)
 
-    mu = (x_t - (1-alphas[t])*epsilon_pred/(np.sqrt(1-alpha_bars[t])) ) / np.sqrt(alphas[t])
+    m = (1.0 / np.sqrt(alphas[t-1])) * (x_t - (betas[t-1] / np.sqrt(1.0 - alpha_bar[t-1])) * epsilon_pred)
 
-    var = betas[t]
+    x_prev = m
 
-    return mu + np.sqrt(var)*z if t>1 else mu
-  
+    if t > 1:
+        x_prev += np.sqrt(betas[t-1])* z
+
+
+    return np.round(x_prev, 4).tolist()
