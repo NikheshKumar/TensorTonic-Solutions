@@ -1,20 +1,18 @@
 import numpy as np
 
-def adamw_step(w, m, v, grad, lr=0.001, beta1=0.9, beta2=0.999, weight_decay=0.01, eps=1e-8):
+def adamw_step(w: list, m: list, v: list, grad: list, lr: float = 0.001, beta1: float = 0.9, beta2: float = 0.999, weight_decay: float = 0.01, eps: float = 1e-8) -> dict:
     """
-    Perform one AdamW update step.
+    Returns a dictionary with new_w, new_m, and new_v.
     """
     # Write code here
-    w = np.asarray(w, np.float64)
-    m = np.asarray(m, np.float64)
-    v = np.asarray(v, np.float64)
-    grad = np.asarray(grad, np.float64)
+    w = np.array(w, dtype=np.float64)
+    m = np.array(m, dtype=np.float64)
+    v = np.array(v, dtype=np.float64)
+    grad = np.array(grad, dtype=np.float64)
 
-    m = beta1*m + (1-beta1)*grad
-    
-    v = beta2*v + (1-beta2)*(grad**2)
+    m_new = beta1 * m + (1.0 - beta1) * grad
+    v_new = beta2 * v + (1.0 - beta2) * (grad**2)
 
-    w = w - lr*(weight_decay*w) - lr*m/(np.sqrt(v)+eps)
+    w_new = w - lr * m_new / (np.sqrt(v_new) + eps) - lr * weight_decay * w
 
-    return w, m, v
-    
+    return {"new_w":w_new, "new_m":m_new, "new_v":v_new}
