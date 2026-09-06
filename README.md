@@ -285,6 +285,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Full Attention Residuals | Implement Kimi K3 full attention residuals by mixing normalized layer outputs with learned residual coefficients. | https://www.tensortonic.com/research/kimik3/k3-full-attnres |
 | Gated MLA | Build Kimi K3 Gated MLA with low-rank query and KV projections, per-head gating, RoPE inputs, and latent caching. | https://www.tensortonic.com/research/kimik3/k3-gated-mla |
 | KDA Recurrence | Implement Kimi K3's KDA recurrence with gated state updates, normalized queries and keys, and ordered token readouts. | https://www.tensortonic.com/research/kimik3/k3-kda-recurrence |
+| Per-Head Muon | Implement Kimi K3 per-head Muon updates with momentum accumulation and Newton-Schulz orthogonalization. | https://www.tensortonic.com/research/kimik3/k3-per-head-muon |
 | SiTU-GLU | Implement Kimi K3 SiTU-GLU by combining sigmoid-tanh gated activations with an elementwise linear branch. | https://www.tensortonic.com/research/kimik3/k3-situ-glu |
 | Llama 3 Transformer Block | Assemble a Llama Transformer block with RMSNorm, grouped-query attention, SwiGLU, and residual connections. | https://www.tensortonic.com/research/llama/llama-block |
 | Full Llama 3 Forward Pass | Build the full Llama forward pass from token embeddings through Transformer blocks to vocabulary logits. | https://www.tensortonic.com/research/llama/llama-forward |
