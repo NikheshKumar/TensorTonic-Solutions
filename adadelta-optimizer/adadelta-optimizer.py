@@ -1,24 +1,21 @@
 import numpy as np
 
-def adadelta_step(w, grad, E_grad_sq, E_update_sq, rho=0.9, eps=1e-6):
+def adadelta_step(w: list, grad: list, E_grad_sq: list, E_update_sq: list, rho: float = 0.9, eps: float = 1e-6) -> dict:
     """
-    Perform one AdaDelta update step.
+    Returns a dictionary with new_w, new_E_grad_sq, and new_E_update_sq.
     """
     # Write code here
-    w = np.asarray(w)
-    grad = np.asarray(grad)
-    E_grad_sq = np.asarray(E_grad_sq)
-    E_update_sq = np.asarray(E_update_sq)
+    w = np.array(w, dtype=np.float64)
+    grad = np.array(grad, dtype=np.float64)
+    E_grad_sq = np.array(E_grad_sq, dtype=np.float64)
+    E_update_sq = np.array(E_update_sq, dtype=np.float64)
 
-    E_grad_sq = rho*E_grad_sq + (1-rho)*(grad**2)
+    E_grad_sq = rho * E_grad_sq + (1.0 - rho) * (grad**2)
 
-    num = -np.sqrt( E_update_sq + eps )
-    den = np.sqrt( E_grad_sq + eps )
+    delta = - grad * np.sqrt(E_update_sq  + eps) / np.sqrt(E_grad_sq + eps)
 
-    w_diff = num * grad / den
+    E_update_sq = rho * E_update_sq + (1.0 - rho) * (delta**2)
 
-    E_update_sq = rho*E_update_sq + (1-rho)*(w_diff**2)
+    w = w + delta
 
-    w = w + w_diff
-
-    return w, E_grad_sq, E_update_sq
+    return {"new_w":w, "new_E_grad_sq":E_grad_sq, "new_E_update_sq":E_update_sq}
