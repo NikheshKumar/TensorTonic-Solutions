@@ -259,6 +259,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | QK-Norm | Normalize GLM-4.5 query and key vectors independently per attention head before score computation. | https://www.tensortonic.com/research/glm45/glm-qk-norm |
 | RMSNorm | Implement GLM-4.5 RMSNorm by scaling hidden states with inverse root-mean-square magnitude and learned weights. | https://www.tensortonic.com/research/glm45/glm-rmsnorm |
 | RoPE Frequency Table | Generate the GLM-4.5 rotary frequency table from positions, rotary dimensions, and the configured frequency base. | https://www.tensortonic.com/research/glm45/glm-rope-freqs |
+| Dense SwiGLU FFN | Implement the GLM-4.5 dense SwiGLU feed-forward network with gated projections and an output projection. | https://www.tensortonic.com/research/glm45/glm-swiglu |
 | Scaled Dot-Product Attention | Implement GPT-2 scaled dot-product attention from query-key scores, softmax weights, and value aggregation. | https://www.tensortonic.com/research/gpt2/gpt2-attention |
 | Apply and Reverse Byte-Level BPE | Implement GPT-2 BPE encoding and decoding by applying learned merges and reconstructing the original token sequence. | https://www.tensortonic.com/research/gpt2/gpt2-bpe-encode-decode |
 | Train a Byte-Level BPE Vocabulary | Train a GPT-2 byte-pair encoding vocabulary by repeatedly merging the most frequent adjacent token pair. | https://www.tensortonic.com/research/gpt2/gpt2-bpe-training |
