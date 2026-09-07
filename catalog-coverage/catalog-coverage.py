@@ -1,17 +1,12 @@
-def catalog_coverage(recommendations, n_items):
+def catalog_coverage(recommendations: list, n_items: int) -> float:
     """
-    Compute the catalog coverage of a recommender system.
+    Returns the fraction of catalog items that were recommended.
     """
     # Write code here
-    import numpy as np 
-
-    rec_unique = set()
-
-    for i in recommendations:
-      rec_unique.update(i) 
-
-    coverage = len(rec_unique) / n_items
-
-    return float(coverage)
-
-  
+    if n_items==0:
+        return 0.0
+    else:
+        unique = set()
+        for i in recommendations:
+          unique.update(i) 
+        return len(unique) / n_items
