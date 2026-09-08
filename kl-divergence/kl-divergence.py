@@ -1,18 +1,16 @@
 import numpy as np
 
-def kl_divergence(p, q, eps=1e-12):
+def kl_divergence(p: list, q: list, eps: float = 1e-12) -> float:
     """
-    Compute KL Divergence D_KL(P || Q).
+    Returns the divergence as a float.
     """
     # Write code here
-    p = np.asarray(p, float)
-    q = np.asarray(q, float)
+    p = np.array(p, dtype=np.float64)
+    q = np.array(q, dtype=np.float64)
 
-    q_stable = q + eps
+    mask = p>eps
 
-    mask = p>0
-    p_new = p[mask]
-    q_stable = q_stable[mask]
+    q = np.clip(q, eps, 1)
 
-    d = np.sum(p_new* np.log(p_new/q_stable) )
-    return d
+    return float(np.sum(p * np.log(p[mask] / q[mask])))
+    
