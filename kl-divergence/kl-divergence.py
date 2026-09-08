@@ -12,5 +12,5 @@ def kl_divergence(p: list, q: list, eps: float = 1e-12) -> float:
 
     q = np.clip(q, eps, 1)
 
-    return float(np.sum(p * np.log(p[mask] / q[mask])))
+    return float(np.sum(p[mask] * np.log(p[mask] / q[mask])))
     
