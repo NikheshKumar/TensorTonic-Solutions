@@ -1,16 +1,13 @@
-def rating_normalization(matrix):
+def rating_normalization(matrix: list) -> list:
     """
-    Mean-center each user's ratings in the user-item matrix.
+    Returns the mean-centered user-item matrix.
     """
     # Write code here
+    mat_normalized = []
 
-    import numpy as np 
+    for row in matrix:
+        r = [ele for ele in row if ele!=0]
+        mean = sum(r)/len(r) if len(r)!=0 else 0.0
+        mat_normalized.append([ele - mean if ele != 0 else 0.0 for ele in row])
 
-    matrix = np.asarray(matrix)
-
-    mask = np.where(matrix>0, matrix, np.nan)
-    row_means = np.nanmean(mask, axis=1, keepdims=True)
-    mat_norm = np.where(matrix>0, matrix-row_means, 0.0)
-
-    return mat_norm.tolist()
-  
+    return mat_normalized
