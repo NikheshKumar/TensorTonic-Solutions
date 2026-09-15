@@ -344,6 +344,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | VGG Configuration | Generate the canonical convolution and max-pooling layer configuration for VGG11, VGG13, VGG16, or VGG19. | https://www.tensortonic.com/research/vgg/vgg-config |
 | VGG Conv Block | Implement a VGG convolutional block as sequential channel projections with ReLU activation at every spatial position. | https://www.tensortonic.com/research/vgg/vgg-conv-block |
 | VGG Feature Extractor | Implement a configuration-driven VGG feature extractor that alternates ReLU projections with 2x2 max pooling. | https://www.tensortonic.com/research/vgg/vgg-feature-extractor |
+| Complete VGG Network | Assemble a complete VGG16 forward pass by composing the configured feature extractor with the classifier head. | https://www.tensortonic.com/research/vgg/vgg-full-network |
 | VGG Max Pooling | Implement VGG 2x2 max pooling with stride two while preserving the input batch and channel dimensions. | https://www.tensortonic.com/research/vgg/vgg-maxpool |
 | Class Token [CLS] | Prepend a learned classification token to each Vision Transformer patch sequence for image-level prediction. | https://www.tensortonic.com/research/vit/vit-class-token |
 | ViT Encoder Block | Build a Vision Transformer encoder block with layer normalization, multi-head attention, MLP, and residual connections. | https://www.tensortonic.com/research/vit/vit-encoder-block |
