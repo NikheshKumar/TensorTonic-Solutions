@@ -1,34 +1,32 @@
 import numpy as np
 
-def pearson_correlation(X):
+def pearson_correlation(X: list) -> np.ndarray:
     """
-    Compute Pearson correlation matrix from dataset X.
+    Returns the correlation matrix as a NumPy array.
     """
     # Write code here
+    X = np.array(X, dtype=np.float64)
 
-    X = np.asarray(X, float)
-  
     if X.ndim!=2:
-      return None
+        return None
 
-    N,d = X.shape
+    N, D = X.shape
     if N<2:
-      return None
+        return None
 
+    X_c = X - np.mean(X, axis=0, keepdims=True)
 
-    X_new = X - np.mean(X, axis=0, keepdims=True)
-  
-    cov = np.dot(X_new.T, X_new) / (N-1)
+    cov = X_c.T @ X_c / (N-1)
 
-    sdev = np.std(X, axis=0, ddof=1, keepdims=True)
+    std_dev = np.std(X, axis=0, keepdims=True, ddof=1)
 
-    den =  np.outer(sdev,sdev)
+    den = np.outer(std_dev, std_dev)
 
-    corr = np.divide(cov, den, out=np.full((d, d), np.nan), where=(den!=0) ) 
+    with np.errstate(invalid="ignore", divide="ignore"):
+        corr = np.divide(cov, den, out=np.full((D, D), np.nan), where=den != 0)
 
-    mask = np.diag(den)!=0
-    indices = np.where(mask)[0]
-    for i in indices:
-        corr[i, i] = 1.0
- 
-    return corr.tolist()
+    mask = std_dev != 0
+
+    corr[np.diag_indices_from(corr)] = np.where(mask, 1.0, np.nan)
+
+    return corr
