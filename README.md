@@ -263,6 +263,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Local and Global Layer Routing | Route Gemma 3 layers between global and local attention according to the configured layer pattern. | https://www.tensortonic.com/research/gemma3/gemma3-layer-routing |
 | Query-Key RMS Normalization | Apply Gemma 3 query-key normalization independently to attention heads before computing attention scores. | https://www.tensortonic.com/research/gemma3/gemma3-qk-norm |
 | Sliding-Window Causal Attention | Create Gemma 3 sliding-window causal attention masks that restrict each query to recent preceding tokens. | https://www.tensortonic.com/research/gemma3/gemma3-sliding-window |
+| GQA Attention with QK-Norm and Partial RoPE | Implement GLM-4.5 grouped-query attention with QK normalization, partial RoPE, repeated KV heads, and causal masking. | https://www.tensortonic.com/research/glm45/glm-gqa-attention |
 | QK-Norm | Normalize GLM-4.5 query and key vectors independently per attention head before score computation. | https://www.tensortonic.com/research/glm45/glm-qk-norm |
 | RMSNorm | Implement GLM-4.5 RMSNorm by scaling hidden states with inverse root-mean-square magnitude and learned weights. | https://www.tensortonic.com/research/glm45/glm-rmsnorm |
 | RoPE Frequency Table | Generate the GLM-4.5 rotary frequency table from positions, rotary dimensions, and the configured frequency base. | https://www.tensortonic.com/research/glm45/glm-rope-freqs |
@@ -484,12 +485,12 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Arange and Linspace | Generate a one-dimensional NumPy sequence using either step-based arange or count-based linspace semantics. | https://www.tensortonic.com/study-plans/numpy-basics/numpy-arange-linspace |
 | Basic Indexing | Extract a rectangular NumPy subarray with row and column slice boundaries using standard basic indexing. | https://www.tensortonic.com/study-plans/numpy-basics/numpy-basic-indexing |
 | Boolean Masking | Build three filtered views of a 2D array: an element-level boolean mask, rows kept when any element exceeds a threshold. | https://www.tensortonic.com/study-plans/numpy-basics/numpy-boolean-masking |
-| Create Arrays from Lists | Create NumPy arrays from Python lists with the requested dtype and return their values, shape, dimensions, and element count. | https://www.tensortonic.com/study-plans/numpy-basics/numpy-create-array |
+| Create Arrays from Lists | Convert a rectangular Python list of lists into a two-dimensional NumPy float64 array. | https://www.tensortonic.com/study-plans/numpy-basics/numpy-create-array |
 | Fancy Indexing | Convert the data to float64 and return the array formed by selecting elements along that axis using integer array indexing. | https://www.tensortonic.com/study-plans/numpy-basics/numpy-fancy-indexing |
 | Filter and Extract | Implement Filter and Extract, and apply a boolean mask to select values strictly greater than threshold. | https://www.tensortonic.com/study-plans/numpy-basics/numpy-filter-extract |
 | Mutation Trap | Extract an independent NumPy row copy, mutate it safely, and verify that the original array remains unchanged. | https://www.tensortonic.com/study-plans/numpy-basics/numpy-mutation-trap |
 | Random Array Generation | Generate seeded float64 NumPy arrays from either a uniform or standard normal distribution. | https://www.tensortonic.com/study-plans/numpy-basics/numpy-random-arrays |
-| Reshaping Arrays | Transform a float64 NumPy array with flattening, transposition, or a validated target shape. | https://www.tensortonic.com/study-plans/numpy-basics/numpy-reshape |
+| Reshaping Arrays | Transform a rectangular input into a NumPy float64 array using flattening, transposition, or a leading batch dimension. | https://www.tensortonic.com/study-plans/numpy-basics/numpy-reshape |
 | Zeros and Ones | Create a two-dimensional float64 NumPy array of a requested shape filled entirely with zeros or ones. | https://www.tensortonic.com/study-plans/numpy-basics/numpy-zeros-ones |
 | Boolean Indexing | Filter pandas rows by a numeric column threshold and return the matching records with their original column order. | https://www.tensortonic.com/study-plans/pandas-basics/pandas-boolean-indexing |
 | Change Data Types | Create a DataFrame, convert the specified column to the target type, and return the dtypes before and after conversion. | https://www.tensortonic.com/study-plans/pandas-basics/pandas-change-dtypes |
