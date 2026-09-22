@@ -264,6 +264,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Query-Key RMS Normalization | Apply Gemma 3 query-key normalization independently to attention heads before computing attention scores. | https://www.tensortonic.com/research/gemma3/gemma3-qk-norm |
 | Sliding-Window Causal Attention | Create Gemma 3 sliding-window causal attention masks that restrict each query to recent preceding tokens. | https://www.tensortonic.com/research/gemma3/gemma3-sliding-window |
 | GQA Attention with QK-Norm and Partial RoPE | Implement GLM-4.5 grouped-query attention with QK normalization, partial RoPE, repeated KV heads, and causal masking. | https://www.tensortonic.com/research/glm45/glm-gqa-attention |
+| Group-Routed Top-k Router | Implement the GLM-4.5 group-routed top-k router by selecting expert groups, experts, and normalized weights. | https://www.tensortonic.com/research/glm45/glm-group-router |
 | Partial RoPE | Apply GLM-4.5 partial RoPE to only the rotary subset of query and key dimensions while preserving the remainder. | https://www.tensortonic.com/research/glm45/glm-partial-rope |
 | QK-Norm | Normalize GLM-4.5 query and key vectors independently per attention head before score computation. | https://www.tensortonic.com/research/glm45/glm-qk-norm |
 | RMSNorm | Implement GLM-4.5 RMSNorm by scaling hidden states with inverse root-mean-square magnitude and learned weights. | https://www.tensortonic.com/research/glm45/glm-rmsnorm |
