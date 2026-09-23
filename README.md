@@ -286,6 +286,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | GPT-2 Multi-Head Causal Attention | Build GPT-2 multi-head attention with QKV projection, causal attention per head, concatenation, and output projection. | https://www.tensortonic.com/research/gpt2/gpt2-mha |
 | Temperature and Top-k Sampling | Implement GPT-2 top-k sampling with temperature scaling, probability normalization, and seeded token selection. | https://www.tensortonic.com/research/gpt2/gpt2-topk-sampling |
 | Attention Sinks | Add GPT-OSS attention sinks as learned softmax biases that give attention heads persistent virtual key positions. | https://www.tensortonic.com/research/gptoss/gpto-attention-sinks |
+| GPT-OSS MoE Forward Pass | Build the GPT-OSS MoE forward pass with routed expert dispatch, MXFP4 expert weights, and weighted output combination. | https://www.tensortonic.com/research/gptoss/gpto-moe-forward |
 | MoE Top-k Routing | Implement GPT-OSS MoE routing with top-k expert selection followed by softmax normalization over selected scores. | https://www.tensortonic.com/research/gptoss/gpto-moe-routing |
 | Sliding Window Causal Mask | Create a GPT-OSS sliding-window causal mask that exposes only the current token and its recent history. | https://www.tensortonic.com/research/gptoss/gpto-sliding-window-mask |
 | YaRN Scaled RoPE | Implement GPT-OSS YaRN-scaled rotary embeddings with frequency interpolation for extended context lengths. | https://www.tensortonic.com/research/gptoss/gpto-yarn-rope |
