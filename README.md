@@ -21,6 +21,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 
 | Problem | Description | Link |
 |---|---|---|
+| Gmail Spam Filter |  | https://www.tensortonic.com/ml-design/spam-filter |
 | Implement AdaDelta Update Step | Implement a vectorized AdaDelta update in NumPy using running gradient and parameter-update averages without a manual learning rate. | https://www.tensortonic.com/problems/adadelta-optimizer |
 | AdaGrad Optimizer | Implement a vectorized AdaGrad update in NumPy with accumulated squared gradients and adaptive per-parameter learning rates. | https://www.tensortonic.com/problems/adagrad-optimizer |
 | Implement Adam Optimizer Step | Implement one vectorized Adam optimizer step in NumPy with first and second moments, bias correction, and elementwise parameter updates. | https://www.tensortonic.com/problems/adam-optimizer |
@@ -391,6 +392,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Perceptron | Train a binary perceptron from zero-initialized weights using ordered samples, step predictions, and error-correction updates. | https://www.tensortonic.com/study-plans/cracking-dl/dl-perceptron |
 | Pooling Layers | Implement channelwise two-dimensional max and average pooling with configurable kernel and stride. | https://www.tensortonic.com/study-plans/cracking-dl/dl-pooling-layers |
 | Transposed Convolution | Implement transposed convolution from scratch as the learned spatial upsampling operation used by decoder networks. | https://www.tensortonic.com/study-plans/cracking-dl/dl-transposed-convolution |
+| Variational Autoencoder Forward Pass | Implement a NumPy variational autoencoder forward pass with mean, log variance, reparameterization, and reconstruction. | https://www.tensortonic.com/study-plans/cracking-dl/dl-vae |
 | Weight Initialization | Compute per-layer NumPy weight initialization parameters from network dimensions and the selected initialization method. | https://www.tensortonic.com/study-plans/cracking-dl/dl-weight-initialization |
 | Implement Grouped-Query Attention (GQA) | Implement grouped-query attention by mapping query heads onto fewer key-value heads with validated head divisibility. | https://www.tensortonic.com/study-plans/cracking-inference/inference-grouped-query-attention |
 | Implement MoE Token Dispatch and Expert Aggregation | Run each expert's feed-forward computation only on the tokens routed to it, and scatter-add the routing-weighted results back into token order. | https://www.tensortonic.com/study-plans/cracking-inference/inference-moe-dispatch-aggregation |
@@ -552,7 +554,6 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | SiLU | Implement fused SiLU or Swish activation in Triton with contiguous tiles, sigmoid weighting, and masked tails. | https://www.tensortonic.com/study-plans/triton-basics/triton/triton-silu |
 | Vector Sum Reduction | Implement tiled vector sum reduction in Triton with register partials, atomic accumulation, and masked tail lanes. | https://www.tensortonic.com/study-plans/triton-basics/triton/triton-sum |
 | Vector Addition | Implement elementwise vector addition in Triton with contiguous program tiles and safe masking for partial tails. | https://www.tensortonic.com/study-plans/triton-basics/triton/triton-vector-addition |
-| Gmail Spam Filter |  | https://www.tensortonic.com/system-design/spam-filter |
 
 View my verified ML profile: [TensorTonic profile](https://www.tensortonic.com/profile/nk10)
 <!-- tensortonic:end -->
