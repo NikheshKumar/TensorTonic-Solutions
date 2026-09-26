@@ -10,15 +10,9 @@ def impute_missing(X: list, strategy: str = "mean") -> np.ndarray:
     n = X.shape[-1]
     mask = np.isnan(X)
 
-    if strategy == "mean":
-        m = np.nanmean(X, axis=0)
-
-    if strategy == "median":
-        m = np.nanmedian(X, axis=0)
-       
-
-    m = np.where(np.isnan(m), 0.0, m)
+    m = np.nanmean(X, axis=0) if strategy=="mean" else np.nanmedian(X, axis=0)
+    m = np.nan_to_num(m, nan=0.0)
     X[mask] = np.broadcast_to(m, X.shape)[mask]
-
+    
     return X
             
