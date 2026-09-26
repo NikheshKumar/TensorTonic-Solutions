@@ -1,28 +1,24 @@
 import numpy as np
 
-def impute_missing(X, strategy='mean'):
+def impute_missing(X: list, strategy: str = "mean") -> np.ndarray:
     """
-    Fill NaN values in each feature column using column mean or median.
+    Returns a NumPy array with the same shape as X.
     """
     # Write code here
-    X = np.atleast_2d(np.asarray(X, float))
-    N, D = X.shape
+    X = np.array(X, dtype=np.float64)
 
-    X = X.reshape(-1,1) if N==1 else X
-  
-    if strategy=='mean':
-      mask = np.isnan(X)
-      mean_vals = np.nanmean(X, axis=0)
-      mean_vals = np.where(np.isnan(mean_vals), 0.0, mean_vals)
-      X_new = np.where(mask, mean_vals, X)
-      
-    if strategy=='median':
-      mask = np.isnan(X)
-      median_vals = np.nanmedian(X, axis=0)
-      median_vals = np.where(np.isnan(median_vals), 0.0, median_vals)
-      X_new = np.where(mask, median_vals, X)
+    n = X.shape[-1]
+    mask = np.isnan(X)
 
-    X_new = X_new.flatten() if N==1 else X_new
+    if strategy == "mean":
+        m = np.nanmean(X, axis=0)
 
-    return X_new
-      
+    if strategy == "median":
+        m = np.nanmedian(X, axis=0)
+       
+
+    m = np.where(np.isnan(m), 0.0, m)
+    X[mask] = np.broadcast_to(m, X.shape)[mask]
+
+    return X
+            
