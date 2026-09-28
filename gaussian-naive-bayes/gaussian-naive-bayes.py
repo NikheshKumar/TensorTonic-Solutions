@@ -1,36 +1,48 @@
-def gaussian_naive_bayes(X_train, y_train, X_test):
+import math
+
+def gaussian_naive_bayes(X_train: list, y_train: list, X_test: list) -> list:
     """
-    Predict class labels for test samples using Gaussian Naive Bayes.
+    Returns a predicted class label for every test sample.
     """
     # Write code here
-    import numpy as np  
-
-    X_train = np.asarray(X_train, float)
-    X_test = np.asarray(X_test, float)
-    y_train = np.asarray(y_train, float)
-
-    cla, counts = np.unique(y_train, return_counts=True)
-
-    n_classes = len(cla)
-    n_features = X_train.shape[1]
-
-    priors = counts / len(y_train)
-
-    mu = np.zeros((n_classes, n_features), float)
-    var = np.zeros((n_classes, n_features), float)
-
+    
+    classes = set(y_train)
+    sorted_classes = sorted(classes)
+    N, D = len(X_train), len(X_train[0])
     eps = 1e-9
 
-    for i, c in enumerate(cla):
-        X_class = X_train[y_train == c]
-        mu[i, :] = np.mean(X_class, axis=0)
-        var[i, :] = np.var(X_class, axis=0) + eps
+    priors = {}
+    means = {}
+    var = {}
 
-    X_test_new = X_test[:, np.newaxis, :]
+    for c in classes:
+        X_c = [X_train[i] for i in range(N) if y_train[i] == c]
+        priors[c] = len(X_c) / N
+        means[c]  = [sum(X_c[i][j] for i in range(len(X_c))) / len(X_c) for j in range(D)]
+        var[c]    = [sum((X_c[i][j] - means[c][j]) ** 2.0 for i in range(len(X_c))) / len(X_c) + eps for j in range(D)]
 
-    log_posterior = np.log(priors) + np.sum( np.log(2 * np.pi * var) - 0.5 * ((X_test_new- mu)**2 / var), axis=2)
+    pred = [0] * len(X_test)
 
-    y_pred_index = np.argmax(log_posterior, axis=1)
-    y_pred = cla[y_pred_index]
+    for i in range(len(X_test)):
+        
+        best_c = None
+        best_score = -float("inf")
+        
+        for c in classes:
+            score = math.log(priors[c])
+            for j in range(D):
+                mu    = means[c][j]
+                v = var[c][j]
+                score += -0.5 * math.log(2.0 * math.pi * v) - (X_test[i][j] - mu) ** 2.0 / (2.0 * v)
+                         
+            if score > best_score:
+                best_score = score
+                best_c = c
 
-    return y_pred.tolist()
+        pred[i] = best_c
+
+    return pred
+
+    
+        
+        
