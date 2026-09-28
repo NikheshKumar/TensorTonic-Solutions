@@ -15,11 +15,13 @@ def softmax_cross_entropy_gradient(logits: list, labels: list) -> dict:
 
     loss = - np.sum(labels * np.log(p))
 
-    grad1 = p - labels
+    dL_dp = -labels / p
+    J = np.diag(p) - np.outer(p, p)
+    grad1 = J.T @ dL_dp
 
     grad2 = p - labels
 
-    match = np.all(np.abs(grad1 - grad2) < 1e-7)
+    match = bool(np.all(np.abs(grad1 - grad2) < 1e-7))
 
     return {"grad_chain_rule":grad1, "grad_direct":grad2, "loss":loss, "match":match, "softmax":p}
 
