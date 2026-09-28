@@ -1,18 +1,14 @@
-def cumulative_returns(returns):
+def cumulative_returns(returns: list) -> list:
     """
-    Compute the cumulative return at each time step.
+    Returns the compounded cumulative return after every period.
     """
     # Write code here
-    import numpy as np 
+    w = 1.0
 
-    returns = np.asarray(returns)
+    re = []
 
-    w = 1 + returns
-    cum_grwoth = np.cumprod(w)
+    for i in range(len(returns)):
+        w = w*(1.0 + returns[i])
+        re.append(w-1.0)
 
-    cum_re = cum_grwoth - 1
-
-    return cum_re.tolist()
-    
-
-  
+    return re
