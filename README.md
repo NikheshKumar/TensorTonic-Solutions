@@ -262,6 +262,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Convex Polytope Membership | Test whether a query point satisfies every linear inequality defining a convex polytope. | https://www.tensortonic.com/problems/optim-convex-set-membership |
 | Convexity Certificate via the Hessian | Certify convexity of a twice-differentiable objective by checking whether its Hessian is positive semidefinite. | https://www.tensortonic.com/problems/optim-convexity-certificate |
 | Classify a Critical Point from the Hessian | Classify a stationary point as a minimum, maximum, or saddle from the eigenvalues of its Hessian. | https://www.tensortonic.com/problems/optim-critical-point-classification |
+| Nesterov Momentum | Compare classical momentum and Nesterov momentum on a linear regression task (MSE loss), returning both loss curves. | https://www.tensortonic.com/problems/optim-nesterov |
 | Minimum of an Axis-Aligned Paraboloid | Compute the coordinates and objective value at the minimum of an axis-aligned convex paraboloid. | https://www.tensortonic.com/problems/optim-paraboloid-minimum |
 | Minimum of a Univariate Quadratic | Compute the minimizer and minimum value of a strictly convex univariate quadratic from its coefficients. | https://www.tensortonic.com/problems/optim-quadratic-minimum |
 | Vanilla Gradient Descent | Implement vanilla gradient descent to minimize a two-variable function from a given starting point, returning the full optimization trajectory. | https://www.tensortonic.com/problems/optim-vanilla-gd |
