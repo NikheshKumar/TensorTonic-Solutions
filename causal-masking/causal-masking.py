@@ -1,29 +1,13 @@
 import numpy as np
 
-def apply_causal_mask(scores, mask_value=-1e9):
+def apply_causal_mask(scores: list, mask_value: float = -1e9) -> np.ndarray:
     """
-    scores: np.ndarray with shape (..., T, T)
-    mask_value: float used to mask future positions (e.g., -1e9)
-    Return: masked scores (same shape, dtype=float)
+    Returns a causally masked NumPy array matching the shape of scores.
     """
     # Write code here
-    scores = np.asarray(scores, float)
-    T = scores.shape[-1]
+    scores = np.asarray(scores, dtype=np.float64)
+    seq_q, seq_k = scores.shape[-2], scores.shape[-1]
 
-    mask = np.triu(np.ones((T, T), dtype=bool), k=1)
+    mask = np.triu(np.ones((seq_q, seq_k), dtype=bool), 1)
 
-    mat = scores.copy()
-
-    mat[..., mask] = mask_value
-
-    return mat
-    
-
-
-
-
-
-    
-
-
- 
+    return np.where(mask, mask_value, scores)
