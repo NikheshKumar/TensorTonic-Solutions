@@ -8,22 +8,15 @@ def cached_causal_attention(
     """
     Returns (outputs, key_cache, value_cache), float32 tensors in sequence order.
     """
+
     B, S, dk = query.shape
-    _, _, dv = value.shape
 
-    outputs = []
+    scores = query @ key.transpose(-2, -1) / (dk ** 0.5)   
+    mask = torch.triu(torch.ones((S, S), dtype=torch.bool, device=query.device), diagonal=1)
+    scores = scores.masked_fill(mask, float('-inf'))
+
+    weights = torch.softmax(scores, dim=-1)    
     
-    for i in range(S):
-        q = query[:, i:i+1, :]
-        k = key[:, :i+1, :]
-        v = value[:, :i+1, :]
+    outputs = weights @ value                              
 
-        scores = q @ k.transpose(-2,-1) / (dk ** 0.5)
-        weights = torch.softmax(scores, dim=-1)
-        att = weights @ v
-
-        outputs.append(att)
-
-    outputs = torch.cat(outputs, dim=1)
-    
-    return outputs, k, v
+    return outputs, key, value
