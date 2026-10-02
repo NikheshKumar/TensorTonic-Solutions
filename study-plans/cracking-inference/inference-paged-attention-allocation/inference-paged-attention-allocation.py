@@ -8,9 +8,8 @@ def allocate_kv_blocks(
     """
     Returns (block_table, blocks_used, remaining_free_blocks), integer tensors.
     """
-    import math 
     
-    blocks_used = [math.ceil(l/block_size) for l in seq_lengths]
+    blocks_used = [l//block_size + (1 if l%block_size else 0) for l in seq_lengths]
 
     total = sum(blocks_used)
     if total >  len(free_block_ids):
