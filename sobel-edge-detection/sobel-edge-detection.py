@@ -1,33 +1,40 @@
-def sobel_edges(image):
+import math
+
+def sobel_edges(image: list) -> list:
     """
-    Apply the Sobel operator to detect edges.
+    Returns the zero-padded Sobel gradient magnitude at every pixel.
     """
     # Write code here
-    import numpy as np
 
-    image = np.asarray(image, dtype=float)
-    H, W = image.shape
+    H = len(image)
+    W = len(image[0])
+    
+    Kx = [[-1, 0, 1],
+          [-2, 0, 2],
+          [-1, 0, 1]] 
+    
+    Ky = [[-1, -2, -1],
+          [ 0,  0,  0],
+          [ 1,  2,  1]] 
 
-    image_padded = np.pad(image, ((1, 1), (1, 1)), mode='constant')
-    out = np.zeros((H, W), dtype=float)
+    Gx = [[0.0] * W for _ in range(H)]
+    Gy = [[0.0] * W for _ in range(H)]
 
-    kx = np.array([
-        [-1, 0, 1],
-        [-2, 0, 2],
-        [-1, 0, 1]
-    ], dtype=float)
-
-    ky = kx.T
-
+    P = [[0.0] * (W + 2) for _ in range(H + 2)]
     for i in range(H):
         for j in range(W):
+            P[i + 1][j + 1] = image[i][j]
 
-            window = image_padded[i:i+3, j:j+3]
+    for i in range(H):
+        row = []
+        for j in range(W):
+            for a in range(3):
+                for b in range(3):
+                    Gx[i][j] += Kx[a][b] * P[i+a][j+b]
+                    Gy[i][j] += Ky[a][b] * P[i+a][j+b]
 
-            Gx = np.sum(window * kx)
-            Gy = np.sum(window * ky)
 
-            out[i][j] = (Gx * Gx + Gy * Gy) ** 0.5
+    G = [[math.sqrt(Gx[i][j] ** 2 + Gy[i][j] ** 2) for j in range(W)] for i in range(H)]
 
 
-    return out.tolist()
+    return G
