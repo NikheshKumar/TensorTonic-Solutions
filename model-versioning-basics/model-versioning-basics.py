@@ -1,10 +1,8 @@
-def promote_model(models):
+def promote_model(models: list) -> str:
     """
-    Decide which model version to promote to production.
+    Returns the model name as a string.
     """
     # Write code here
-    import numpy as np 
-
-    ans = sorted(models, key=lambda x: (x['accuracy'], -x['latency'], x['timestamp']), reverse=True)
+    ans = sorted(models, key=lambda x:(x['accuracy'], -x['latency'],x['timestamp']), reverse=True)
 
     return ans[0]['name']
