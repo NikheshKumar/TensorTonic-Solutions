@@ -362,6 +362,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | PPO with Reference-Policy KL | Compute a PPO policy objective with reference-policy KL regularization for stable RLHF optimization. | https://www.tensortonic.com/problems/rl-rlhf-ppo-kl-loss |
 | RLOO (REINFORCE Leave-One-Out) | RLOO (REINFORCE Leave-One-Out) is a policy gradient variance-reduction trick used in modern RLHF. | https://www.tensortonic.com/problems/rl-rloo-reinforce-leave-one-out |
 | Softmax (Boltzmann) Exploration | Convert action values into a numerically stable Boltzmann exploration distribution controlled by temperature. | https://www.tensortonic.com/problems/rl-softmax-exploration |
+| TD(0) Value Update | Apply one TD(0) state-value update using immediate reward, discounted next-state value, and learning rate. | https://www.tensortonic.com/problems/rl-td-zero-update |
 | UCB1 for Multi-Armed Bandits | In a multi-armed bandit, an agent must repeatedly choose one of K arms and only observes the reward of the arm it pulls. | https://www.tensortonic.com/problems/rl-ucb1-multi-armed-bandit |
 | Value Iteration | Run value iteration to convergence for a finite MDP, then extract the greedy optimal policy with stable tie handling. | https://www.tensortonic.com/problems/rl-value-iteration |
 | RMSProp Optimizer (Single Update Step) | Implement one RMSProp update in NumPy using an exponential squared-gradient average and adaptive scaling. | https://www.tensortonic.com/problems/rmsprop-optimizer |
