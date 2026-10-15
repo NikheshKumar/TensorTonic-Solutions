@@ -13,7 +13,7 @@ def resnet_block(x: list, W1: list, b1: list, W2: list, b2: list) -> dict:
     def conv_block(x, weight, bias):
 
         C_in, H, W = x.shape
-        C_out, _, k_H, k_W = W1.shape
+        C_out, _, k_H, k_W = weight.shape
         stride = 1
         padding = 1
         H_out = (H + 2 * padding - k_H) // stride + 1
