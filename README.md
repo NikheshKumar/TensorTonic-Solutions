@@ -363,6 +363,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | LinUCB Contextual Bandit | LinUCB extends the UCB algorithm to contextual bandits by assuming the expected reward of each arm is a linear function of the context. | https://www.tensortonic.com/problems/rl-linucb-contextual-bandit |
 | Monte Carlo Policy Evaluation | Estimate policy state values from complete sampled returns without requiring an environment transition model. | https://www.tensortonic.com/problems/rl-monte-carlo-policy-evaluation |
 | Policy Iteration | Policy iteration solves a finite Markov Decision Process by alternating two steps until the greedy policy stops changing. | https://www.tensortonic.com/problems/rl-policy-iteration |
+| Q-Learning Update | Apply the off-policy Q-learning update using the maximum next-state action value and terminal handling. | https://www.tensortonic.com/problems/rl-q-learning-update |
 | REINFORCE Gradient | Implement REINFORCE Gradient, and return the scalar loss as a float rounded to 4 decimals. | https://www.tensortonic.com/problems/rl-reinforce-gradient |
 | PPO with Reference-Policy KL | Compute a PPO policy objective with reference-policy KL regularization for stable RLHF optimization. | https://www.tensortonic.com/problems/rl-rlhf-ppo-kl-loss |
 | RLOO (REINFORCE Leave-One-Out) | RLOO (REINFORCE Leave-One-Out) is a policy gradient variance-reduction trick used in modern RLHF. | https://www.tensortonic.com/problems/rl-rloo-reinforce-leave-one-out |
