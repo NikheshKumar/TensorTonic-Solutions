@@ -371,6 +371,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | SARSA Update | Apply the on-policy SARSA temporal-difference update from the current transition and next selected action. | https://www.tensortonic.com/problems/rl-sarsa-update |
 | Softmax (Boltzmann) Exploration | Convert action values into a numerically stable Boltzmann exploration distribution controlled by temperature. | https://www.tensortonic.com/problems/rl-softmax-exploration |
 | TD(0) Value Update | Apply one TD(0) state-value update using immediate reward, discounted next-state value, and learning rate. | https://www.tensortonic.com/problems/rl-td-zero-update |
+| Thompson Sampling (Beta-Bernoulli) | Thompson sampling for a Bernoulli multi-armed bandit keeps a Beta posterior over each arm's success probability. | https://www.tensortonic.com/problems/rl-thompson-sampling-beta-bernoulli |
 | UCB1 for Multi-Armed Bandits | In a multi-armed bandit, an agent must repeatedly choose one of K arms and only observes the reward of the arm it pulls. | https://www.tensortonic.com/problems/rl-ucb1-multi-armed-bandit |
 | Value Iteration | Run value iteration to convergence for a finite MDP, then extract the greedy optimal policy with stable tie handling. | https://www.tensortonic.com/problems/rl-value-iteration |
 | RMSProp Optimizer (Single Update Step) | Implement one RMSProp update in NumPy using an exponential squared-gradient average and adaptive scaling. | https://www.tensortonic.com/problems/rmsprop-optimizer |
