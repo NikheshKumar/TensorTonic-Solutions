@@ -360,6 +360,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Double DQN Target | Compute Double DQN targets by selecting actions with the online network and evaluating them with the target network. | https://www.tensortonic.com/problems/rl-double-dqn-target |
 | DPO Closed-Form Loss | Direct Preference Optimization (DPO) replaces the reward-model + PPO pipeline of RLHF with a single supervised loss. | https://www.tensortonic.com/problems/rl-dpo-closed-form-loss |
 | DQN Loss with Target Network | Compute DQN targets and mean squared temporal-difference loss with terminal masking and a separate target network. | https://www.tensortonic.com/problems/rl-dqn-loss-with-target-network |
+| Dueling DQN Decomposition | Dueling DQN splits the action-value function into a state value head V(s) and an advantage head A(s, a), then aggregates them back into Q(s, a). | https://www.tensortonic.com/problems/rl-dueling-dqn-decomposition |
 | Epsilon-Greedy Action Selection | Choose actions with epsilon-greedy exploration, deterministic greedy tie handling, and controlled random sampling. | https://www.tensortonic.com/problems/rl-epsilon-greedy-action-selection |
 | Expected SARSA | Apply Expected SARSA updates using the epsilon-greedy expectation over next-state action values. | https://www.tensortonic.com/problems/rl-expected-sarsa |
 | Experience Replay Buffer | Implement a fixed-capacity circular replay buffer with deterministic overwrites and sampled transition batches. | https://www.tensortonic.com/problems/rl-experience-replay-buffer |
