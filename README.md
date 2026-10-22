@@ -357,6 +357,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Bellman Optimality Equation | Apply one Bellman optimality backup by maximizing expected immediate reward plus discounted next-state value. | https://www.tensortonic.com/problems/rl-bellman-optimality-equation |
 | Bradley-Terry Reward Model Loss | Compute Bradley-Terry pairwise preference loss for chosen and rejected reward-model scores in RLHF. | https://www.tensortonic.com/problems/rl-bradley-terry-reward-loss |
 | Discounted Returns | Compute reverse-time discounted returns from a reward sequence using a configurable discount factor and terminal bootstrap. | https://www.tensortonic.com/problems/rl-discounted-returns |
+| Double DQN Target | Compute Double DQN targets by selecting actions with the online network and evaluating them with the target network. | https://www.tensortonic.com/problems/rl-double-dqn-target |
 | DPO Closed-Form Loss | Direct Preference Optimization (DPO) replaces the reward-model + PPO pipeline of RLHF with a single supervised loss. | https://www.tensortonic.com/problems/rl-dpo-closed-form-loss |
 | DQN Loss with Target Network | Compute DQN targets and mean squared temporal-difference loss with terminal masking and a separate target network. | https://www.tensortonic.com/problems/rl-dqn-loss-with-target-network |
 | Epsilon-Greedy Action Selection | Choose actions with epsilon-greedy exploration, deterministic greedy tie handling, and controlled random sampling. | https://www.tensortonic.com/problems/rl-epsilon-greedy-action-selection |
