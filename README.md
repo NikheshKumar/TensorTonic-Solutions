@@ -284,6 +284,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Nesterov Momentum | Compare classical momentum and Nesterov momentum on a linear regression task (MSE loss), returning both loss curves. | https://www.tensortonic.com/problems/optim-nesterov |
 | Minimum of an Axis-Aligned Paraboloid | Compute the coordinates and objective value at the minimum of an axis-aligned convex paraboloid. | https://www.tensortonic.com/problems/optim-paraboloid-minimum |
 | Minimum of a Univariate Quadratic | Compute the minimizer and minimum value of a strictly convex univariate quadratic from its coefficients. | https://www.tensortonic.com/problems/optim-quadratic-minimum |
+| RMSProp | Implement the RMSProp optimizer to train a linear regression model using full-batch gradient descent with MSE loss. | https://www.tensortonic.com/problems/optim-rmsprop |
 | Vanilla Gradient Descent | Implement vanilla gradient descent to minimize a two-variable function from a given starting point, returning the full optimization trajectory. | https://www.tensortonic.com/problems/optim-vanilla-gd |
 | Ordinal Encoding | Map ordered categorical values to integer ranks using a supplied category ordering and preserve input order. | https://www.tensortonic.com/problems/ordinal-encoding |
 | Outer Product | Compute a vector outer product in CUDA with a two-dimensional grid, row-major output, and bounds-checked indexing. | https://www.tensortonic.com/problems/outer-product |
