@@ -1,14 +1,7 @@
-def reinforce_loss(log_probs, returns):
+def reinforce_loss(log_probs: list, returns: list) -> float:
     """
-    Returns: float, REINFORCE policy loss rounded to 4 decimals
+    Returns the REINFORCE loss as a float rounded to four decimals.
     """
-    import numpy as np 
-
-    log_probs = np.asarray(log_probs, np.float64)
-    returns = np.asarray(returns, np.float64)
-
-    l = -np.mean(log_probs*returns)
-
+    l = -sum(l*g for l,g in zip(log_probs, returns))
+    l = l / len(log_probs)
     return round(float(l),4)
-
-    
