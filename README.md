@@ -276,6 +276,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Zeros and Ones | Create a two-dimensional float64 NumPy array of a requested shape filled entirely with zeros or ones. | https://www.tensortonic.com/problems/numpy-zeros-ones |
 | One-Hot Encoding (Multi-class) | Convert multiclass integer labels into a NumPy one-hot matrix with one active column per sample. | https://www.tensortonic.com/problems/one-hot-encoding |
 | AdaGrad | Implement the AdaGrad (Adaptive Gradient) optimizer for linear regression with MSE loss using full-batch gradient descent. | https://www.tensortonic.com/problems/optim-adagrad |
+| Adam Optimizer | Implement the Adam optimizer to train a linear regression model using mean squared error (MSE) loss with full-batch gradient descent. | https://www.tensortonic.com/problems/optim-adam |
 | Batch vs Stochastic vs Mini-Batch GD | Compare how different batch sizes affect gradient descent on linear regression, and return a list of loss curves (one per batch size). | https://www.tensortonic.com/problems/optim-batch-vs-sgd |
 | Classical Momentum | Implement vanilla gradient descent and momentum-based gradient descent to minimize the MSE loss of a linear model, and return both loss curves. | https://www.tensortonic.com/problems/optim-classical-momentum |
 | Convex Polytope Membership | Test whether a query point satisfies every linear inequality defining a convex polytope. | https://www.tensortonic.com/problems/optim-convex-set-membership |
