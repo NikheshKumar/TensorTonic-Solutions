@@ -1,16 +1,16 @@
 import math
 
-def bradley_terry_loss(r_chosen, r_rejected):
+def bradley_terry_loss(r_chosen: list, r_rejected: list) -> float:
     """
-    Returns: float, Bradley-Terry preference loss rounded to 4 decimals
+    Returns the mean preference loss as a float rounded to four decimals.
     """
+    def log_sigmoid(z):
+        ans = min(0.0,z) - math.log1p(math.exp(-abs(z)))
+        return ans
 
-    def logsig(x):
-        return -math.log(1.0+math.exp(-x)) if x>=0.0 else x - math.log(1.0+math.exp(x))
+    n = len(r_chosen)
+    l = -sum(log_sigmoid(rc - rej) for rc, rej in zip(r_chosen, r_rejected))
+    l = l / n
 
-    loss = 0.0
-
-    for i in range(len(r_chosen)):
-        loss += logsig(r_chosen[i] - r_rejected[i])
-
-    return round(-loss/len(r_chosen), 4)
+    return round(l,4)
+    
