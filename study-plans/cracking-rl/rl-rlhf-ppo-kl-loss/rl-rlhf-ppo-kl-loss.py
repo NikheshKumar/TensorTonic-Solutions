@@ -1,17 +1,29 @@
-def rlhf_ppo_kl_loss(log_probs_new, log_probs_old, log_probs_ref, advantages, clip_eps, kl_coef):
+import math
+
+def rlhf_ppo_kl_loss(log_probs_new: list, log_probs_old: list, log_probs_ref: list, advantages: list, clip_eps: float, kl_coef: float) -> float:
     """
-    Returns: float, RLHF PPO loss with KL penalty rounded to 4 decimals
+    Returns the combined PPO and reference-penalty loss, rounded to four decimals.
     """
-    import math
+    def clip(z, a, b):
+        if z<a:
+            return a
+        elif z>b:
+            return b
+        else:
+            return z
+    
+    r = [math.exp(l1-l2) for l1,l2 in zip(log_probs_new, log_probs_old)]
 
-    A = advantages
-    T = len(advantages)
-    loss = 0.0
+    T = len(r)
 
-    for t in range(T):
-        r = math.exp(log_probs_new[t] - log_probs_old[t])
-        clip_r = max(1-clip_eps, min(1+clip_eps, r))
-        loss  += -min(r*A[t], clip_r*A[t]) + kl_coef*(log_probs_new[t] - log_probs_ref[t])
+    l_clip = -sum(min(r[t]*advantages[t], clip(r[t], 1-clip_eps, 1+clip_eps)*advantages[t]) for t in range(T))
+    l_clip = l_clip / T
 
-    return round(loss/T, 4)
+    K = sum(l1-l2 for l1,l2 in zip(log_probs_new, log_probs_ref))
+    K = K/T
+
+    L = l_clip + kl_coef * K
+
+    return round(L,4)
+
     
