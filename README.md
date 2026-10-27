@@ -80,6 +80,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | RMSNorm Forward Pass | Normalize each final-dimension vector by its root mean square and apply the learned scale without mean subtraction. | https://www.tensortonic.com/problems/cs336-l03-rmsnorm-forward |
 | Estimate Critical Batch Size | Convert a batch-size sweep into examples consumed at a target loss and estimate the critical batch size from the minimum reached step and example counts. | https://www.tensortonic.com/problems/cs336-l09-critical-batch-size |
 | Decode Attention with a KV Cache | Append one key and value position to a KV cache and compute grouped-query attention for the next token. | https://www.tensortonic.com/problems/cs336-l10-kv-cache-decode-step |
+| Diagnose muP Width Invariants | Fit log-log width slopes for activation RMS and one-step activation-change RMS, then test both against a supplied invariant tolerance. | https://www.tensortonic.com/problems/cs336-l11-mup-invariant-diagnostics |
 | GELU | Implement exact GELU activation in CUDA with one thread per element and the device error-function intrinsic. | https://www.tensortonic.com/problems/cuda-gelu |
 | Leaky ReLU | Implement Leaky ReLU activation in CUDA with one thread per element, bounds checks, and a configurable negative slope. | https://www.tensortonic.com/problems/cuda-leaky-relu |
 | Matrix Transpose | Implement matrix transpose in CUDA with a two-dimensional launch grid, row-major buffers, and bounds-checked writes. | https://www.tensortonic.com/problems/cuda-matrix-transpose |
