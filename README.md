@@ -503,6 +503,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | GQA Attention with QK-Norm and Partial RoPE | Implement GLM-4.5 grouped-query attention with QK normalization, partial RoPE, repeated KV heads, and causal masking. | https://www.tensortonic.com/research/glm45/glm-gqa-attention |
 | Group-Routed Top-k Router | Implement the GLM-4.5 group-routed top-k router by selecting expert groups, experts, and normalized weights. | https://www.tensortonic.com/research/glm45/glm-group-router |
 | GLM-4.5 MoE Forward Pass | Build the GLM-4.5 MoE forward pass with group routing, expert dispatch, shared-expert computation, and weighted aggregation. | https://www.tensortonic.com/research/glm45/glm-moe-forward |
+| Multi-Token Prediction Head | Implement the GLM-4.5 multi-token prediction head that combines shifted states and produces future-token logits. | https://www.tensortonic.com/research/glm45/glm-mtp |
 | Partial RoPE | Apply GLM-4.5 partial RoPE to only the rotary subset of query and key dimensions while preserving the remainder. | https://www.tensortonic.com/research/glm45/glm-partial-rope |
 | QK-Norm | Normalize GLM-4.5 query and key vectors independently per attention head before score computation. | https://www.tensortonic.com/research/glm45/glm-qk-norm |
 | RMSNorm | Implement GLM-4.5 RMSNorm by scaling hidden states with inverse root-mean-square magnitude and learned weights. | https://www.tensortonic.com/research/glm45/glm-rmsnorm |
