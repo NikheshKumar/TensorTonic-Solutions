@@ -287,6 +287,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Classical Momentum | Implement vanilla gradient descent and momentum-based gradient descent to minimize the MSE loss of a linear model, and return both loss curves. | https://www.tensortonic.com/problems/optim-classical-momentum |
 | Convex Polytope Membership | Test whether a query point satisfies every linear inequality defining a convex polytope. | https://www.tensortonic.com/problems/optim-convex-set-membership |
 | Convexity Certificate via the Hessian | Certify convexity of a twice-differentiable objective by checking whether its Hessian is positive semidefinite. | https://www.tensortonic.com/problems/optim-convexity-certificate |
+| Cosine Annealing with Warm Restarts | Train with cosine-annealed learning rates that periodically restart at the configured maximum value. | https://www.tensortonic.com/problems/optim-cosine-restarts |
 | Classify a Critical Point from the Hessian | Classify a stationary point as a minimum, maximum, or saddle from the eigenvalues of its Hessian. | https://www.tensortonic.com/problems/optim-critical-point-classification |
 | Nesterov Momentum | Compare classical momentum and Nesterov momentum on a linear regression task (MSE loss), returning both loss curves. | https://www.tensortonic.com/problems/optim-nesterov |
 | Newton's Method | Compare gradient descent and Newton's method on a linear regression task using MSE loss. | https://www.tensortonic.com/problems/optim-newtons-method |
