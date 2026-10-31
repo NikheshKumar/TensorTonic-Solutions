@@ -15,12 +15,12 @@ def cosine_restarts(X: list, y: list, eta_max: float, eta_min: float, T_0: int, 
     losses = []
 
     T_i = T_0
-    T_curr = 0.0
+    T_curr = 0
     
     for i in range(total_epochs):
 
         alpha = eta_min + (eta_max - eta_min)*(1+ np.cos(np.pi * T_curr/T_i))/2.0
-        lr_schedule.append(alpha)
+        lr_schedule.append(float(alpha))
 
         loss = np.mean((X@w-y)**2)
         losses.append(loss)
