@@ -55,6 +55,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | BLEU Score | Calculate a BLEU translation score from candidate and reference tokens using clipped n-gram precision and brevity penalty. | https://www.tensortonic.com/problems/bleu-score |
 | Implement BM25 Ranking Score | Implement BM25 document ranking with term frequency saturation, inverse document frequency, and length normalization. | https://www.tensortonic.com/problems/bm25 |
 | Bootstrap Mean & Confidence Interval | Estimate a sample mean and confidence interval through reproducible bootstrap resampling of numeric observations. | https://www.tensortonic.com/problems/bootstrap-mean |
+| Finite Difference Gradient Checking | Estimate scalar derivatives with forward, backward, and central finite differences and compare their numerical errors. | https://www.tensortonic.com/problems/calculus-gradient-check |
 | Limit of a Learning Rate Schedule | Evaluate the long-run limit of an inverse-time learning-rate schedule from its initial rate and decay constant. | https://www.tensortonic.com/problems/calculus-lr-schedule-limit |
 | Softmax + Cross-Entropy Gradient | Compute the softmax probabilities, the cross-entropy loss, and the gradient two ways. | https://www.tensortonic.com/problems/calculus-softmax-ce-gradient |
 | Catalog Coverage | Measure recommendation catalog coverage as the fraction of available items appearing across user recommendation lists. | https://www.tensortonic.com/problems/catalog-coverage |
