@@ -103,6 +103,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Decision Tree Best Split | Find the best decision-tree split by evaluating candidate feature thresholds and selecting the largest impurity reduction. | https://www.tensortonic.com/problems/decision-tree-split |
 | Implement Dice Loss | Compute Dice loss for segmentation predictions using overlap, total mass, and a numerical smoothing term. | https://www.tensortonic.com/problems/dice-loss |
 | Differencing | Transform a time series into lagged differences while preserving the requested differencing interval. | https://www.tensortonic.com/problems/differencing |
+| Sinusoidal Timestep Embedding | Turn integer diffusion timesteps into sinusoidal feature vectors with geometric frequencies, the way DDPM U-Nets do. | https://www.tensortonic.com/problems/diffusion-l03-sinusoidal-timestep-embedding |
 | Discounted Returns | Compute discounted reinforcement-learning returns backward through a reward sequence using a discount factor. | https://www.tensortonic.com/problems/discount-returns |
 | Activation Functions | Implement ReLU, sigmoid, tanh, Leaky ReLU, GELU, and Swish with their analytical derivatives. | https://www.tensortonic.com/problems/dl-activation-functions |
 | Autoencoder Forward Pass | Implement a NumPy autoencoder forward pass through an encoder bottleneck and decoder reconstruction network. | https://www.tensortonic.com/problems/dl-autoencoder |
