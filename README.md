@@ -121,6 +121,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Layer Normalization | Implement Layer Normalization (Ba et al, 2016), the standard normalization technique in Transformers. | https://www.tensortonic.com/problems/dl-layer-normalization |
 | LeNet Forward Pass | Implement the forward pass of a simplified LeNet-style convolutional neural network using only NumPy. | https://www.tensortonic.com/problems/dl-lenet-5 |
 | Loss Functions | Implement MSE, binary cross-entropy, categorical cross-entropy, and Huber losses from supplied predictions and targets. | https://www.tensortonic.com/problems/dl-loss-functions |
+| Multi-Head Attention | Implement NumPy multi-head attention with QKV projections, optional masking, stable softmax, and output projection. | https://www.tensortonic.com/problems/dl-multi-head-attention |
 | Perceptron | Train a binary perceptron from zero-initialized weights using ordered samples, step predictions, and error-correction updates. | https://www.tensortonic.com/problems/dl-perceptron |
 | Pooling Layers | Implement channelwise two-dimensional max and average pooling with configurable kernel and stride. | https://www.tensortonic.com/problems/dl-pooling-layers |
 | Rotary Position Embedding (RoPE) | Implement Rotary Position Embedding (RoPE), which encodes position by rotating pairs of dimensions in the embedding vector. | https://www.tensortonic.com/problems/dl-positional-encoding |
