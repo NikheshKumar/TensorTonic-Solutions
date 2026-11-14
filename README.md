@@ -59,6 +59,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Bootstrap Mean & Confidence Interval | Estimate a sample mean and confidence interval through reproducible bootstrap resampling of numeric observations. | https://www.tensortonic.com/problems/bootstrap-mean |
 | Finite Difference Gradient Checking | Estimate scalar derivatives with forward, backward, and central finite differences and compare their numerical errors. | https://www.tensortonic.com/problems/calculus-gradient-check |
 | Jacobian of a Neural Network Layer | Implement Jacobian of a Neural Network Layer, and compute both analytically and via finite differences. | https://www.tensortonic.com/problems/calculus-jacobian-layer |
+| JVP and VJP for a 2-Layer Network | Compute Jacobian-vector and vector-Jacobian products through a two-layer ReLU network without forming the full Jacobian. | https://www.tensortonic.com/problems/calculus-jvp-vjp |
 | Limit of a Learning Rate Schedule | Evaluate the long-run limit of an inverse-time learning-rate schedule from its initial rate and decay constant. | https://www.tensortonic.com/problems/calculus-lr-schedule-limit |
 | Softmax + Cross-Entropy Gradient | Compute the softmax probabilities, the cross-entropy loss, and the gradient two ways. | https://www.tensortonic.com/problems/calculus-softmax-ce-gradient |
 | Catalog Coverage | Measure recommendation catalog coverage as the fraction of available items appearing across user recommendation lists. | https://www.tensortonic.com/problems/catalog-coverage |
