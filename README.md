@@ -499,6 +499,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Dense Block (Concatenative Connectivity) | Implement a DenseNet block that repeatedly concatenates every new layer output with all preceding feature maps. | https://www.tensortonic.com/research/densenet/densenet-dense-block |
 | Full DenseNet Forward Pass | Assemble a DenseNet forward pass with dense blocks, transitions, final normalization, global pooling, and classification. | https://www.tensortonic.com/research/densenet/densenet-forward |
 | Transition Layer | Implement a DenseNet transition layer with batch normalization, ReLU, 1x1 compression, and average pooling. | https://www.tensortonic.com/research/densenet/densenet-transition |
+| Embedding Head | Build EmbeddingGemma 2's embedding head that mean-pools real tokens, projects them and L2-normalizes the result. | https://www.tensortonic.com/research/embeddinggemma2/eg2-embedding-head |
 | Per-Layer Embeddings | Build EmbeddingGemma 2's projection-only per-layer embedding block with a GELU gate and RMS-normalized residual update. | https://www.tensortonic.com/research/embeddinggemma2/eg2-per-layer-embedding |
 | GAN Discriminator | Implement a GAN discriminator that maps input samples through dense layers to real-versus-fake probabilities. | https://www.tensortonic.com/research/gan/gan-discriminator |
 | Complete GAN System | Assemble a complete GAN system that generates samples, scores them with the discriminator, and returns both outputs. | https://www.tensortonic.com/research/gan/gan-full-network |
