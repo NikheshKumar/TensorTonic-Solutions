@@ -5,10 +5,9 @@ def timestep_embedding(timesteps: torch.Tensor, dim: int, max_period: float) -> 
     """
     Returns the float32 sinusoidal embedding of shape (B, dim).
     """
-    half = dim//2
 
-    idx = torch.arange(0, half)
-    f = torch.exp(-math.log(max_period)*idx / half)
+    idx = torch.arange(0, dim//2)
+    f = torch.exp(-math.log(max_period)*idx / (dim//2))
 
     args = timesteps[:, None].float() * f[None, :]
 
