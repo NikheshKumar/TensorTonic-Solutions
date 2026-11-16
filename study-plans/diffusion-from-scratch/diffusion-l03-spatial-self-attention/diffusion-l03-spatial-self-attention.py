@@ -20,17 +20,17 @@ def spatial_self_attention(x: torch.Tensor, params: dict, num_groups: int, num_h
 
     Z = GN(x, norm_weight, norm_bias).flatten(2).transpose(1, 2)
 
-    Q = (Z @ q_weight.T + q_bias).reshape(B, H*W, n, d).transpose(1,2)
-    K = (Z @ k_weight.T + k_bias).reshape(B, H*W, n, d).transpose(1,2)
-    V = (Z @ v_weight.T + v_bias).reshape(B, H*W, n, d).transpose(1,2)
+    def split_transpose(z):
+        return z.reshape(B, H*W, n, d).transpose(1,2)
+
+    Q = split_transpose(Z @ q_weight.T + q_bias)
+    K = split_transpose(Z @ k_weight.T + k_bias)
+    V = split_transpose(Z @ v_weight.T + v_bias)
 
     scores = Q @ K.transpose(-2,-1) / (d**0.5)
     weights = F.softmax(scores, dim=-1)
 
-    att = weights @ V
-
-    att = att.transpose(1,2)
-    att = att.reshape(B, H*W, C)
+    att = (weights @ V).transpose(1,2).reshape(B, H*W, C)
 
     out = x + (att.contiguous() @ out_weight.T + out_bias).transpose(1,2).reshape(B, C, H, W)
 
