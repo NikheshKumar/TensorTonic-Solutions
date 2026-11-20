@@ -57,6 +57,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | BLEU Score | Calculate a BLEU translation score from candidate and reference tokens using clipped n-gram precision and brevity penalty. | https://www.tensortonic.com/problems/bleu-score |
 | Implement BM25 Ranking Score | Implement BM25 document ranking with term frequency saturation, inverse document frequency, and length normalization. | https://www.tensortonic.com/problems/bm25 |
 | Bootstrap Mean & Confidence Interval | Estimate a sample mean and confidence interval through reproducible bootstrap resampling of numeric observations. | https://www.tensortonic.com/problems/bootstrap-mean |
+| Continuity of Activation Functions | Classify continuity and nondifferentiable points for common activation functions at supplied scalar inputs. | https://www.tensortonic.com/problems/calculus-activation-continuity |
 | Finite Difference Gradient Checking | Estimate scalar derivatives with forward, backward, and central finite differences and compare their numerical errors. | https://www.tensortonic.com/problems/calculus-gradient-check |
 | Jacobian of a Neural Network Layer | Implement Jacobian of a Neural Network Layer, and compute both analytically and via finite differences. | https://www.tensortonic.com/problems/calculus-jacobian-layer |
 | JVP and VJP for a 2-Layer Network | Compute Jacobian-vector and vector-Jacobian products through a two-layer ReLU network without forming the full Jacobian. | https://www.tensortonic.com/problems/calculus-jvp-vjp |
