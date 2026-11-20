@@ -1,11 +1,9 @@
-def elu(x, alpha):
+import math
+
+def elu(x: list, alpha: float = 1.0) -> list:
     """
-    Apply ELU activation to each element.
+    Returns ELU applied elementwise to the input values.
     """
     # Write code here
-    import numpy as np 
-
-    x = np.asarray(x,float)
-    y = np.exp(x) - 1
-
-    return np.where(x>0.0, x, alpha*y ).tolist()
+    ans = [v if v>0.0 else alpha * (math.exp(v)-1.0) for v in x]
+    return ans
