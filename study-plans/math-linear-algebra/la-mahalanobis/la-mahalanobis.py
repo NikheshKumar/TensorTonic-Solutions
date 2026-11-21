@@ -11,6 +11,6 @@ def mahalanobis_distance(x: list, mean: list, cov: list) -> float:
     S = np.linalg.solve(cov, x-mean)
     d = np.sqrt((x-mean).T @ S)
 
-    return d
+    return float(d)
 
     
