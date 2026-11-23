@@ -122,6 +122,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Time-Conditioned Residual Block | Build the GroupNorm, SiLU and convolution residual block that injects a timestep embedding into a diffusion U-Net. | https://www.tensortonic.com/problems/diffusion-l03-time-conditioned-residual-block |
 | Noise Prediction Loss | Compute the DDPM simple training loss by noising a batch, running a toy denoiser and measuring its noise prediction error. | https://www.tensortonic.com/problems/diffusion-l04-noise-prediction-loss |
 | Posterior Mean and Variance | Compute the mean, variance and clipped log variance of the DDPM forward posterior q(x_{t-1} \| x_t, x_0) for a batch. | https://www.tensortonic.com/problems/diffusion-l04-posterior-mean-variance |
+| Prediction Parameterization | Convert a diffusion model output between the epsilon, x0 and v parameterizations using each sample's noise level. | https://www.tensortonic.com/problems/diffusion-l04-prediction-parameterization |
 | Discounted Returns | Compute discounted reinforcement-learning returns backward through a reward sequence using a discount factor. | https://www.tensortonic.com/problems/discount-returns |
 | Activation Functions | Implement ReLU, sigmoid, tanh, Leaky ReLU, GELU, and Swish with their analytical derivatives. | https://www.tensortonic.com/problems/dl-activation-functions |
 | Autoencoder Forward Pass | Implement a NumPy autoencoder forward pass through an encoder bottleneck and decoder reconstruction network. | https://www.tensortonic.com/problems/dl-autoencoder |
