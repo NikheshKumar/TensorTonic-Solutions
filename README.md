@@ -575,6 +575,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Multi-Teacher On-Policy Distillation | Implement Kimi K3 multi-teacher on-policy distillation by gathering teacher logits and returning token-level losses. | https://www.tensortonic.com/research/kimik3/k3-multi-teacher-opd |
 | Per-Head Muon | Implement Kimi K3 per-head Muon updates with momentum accumulation and Newton-Schulz orthogonalization. | https://www.tensortonic.com/research/kimik3/k3-per-head-muon |
 | SiTU-GLU | Implement Kimi K3 SiTU-GLU by combining sigmoid-tanh gated activations with an elementwise linear branch. | https://www.tensortonic.com/research/kimik3/k3-situ-glu |
+| Random Remasking | Build LLaDA's random remasking sampler that reveals masked tokens step by step and remasks each new prediction with probability s over t. | https://www.tensortonic.com/research/llada/llada-random-remasking |
 | Llama 3 Transformer Block | Assemble a Llama Transformer block with RMSNorm, grouped-query attention, SwiGLU, and residual connections. | https://www.tensortonic.com/research/llama/llama-block |
 | Full Llama 3 Forward Pass | Build the full Llama forward pass from token embeddings through Transformer blocks to vocabulary logits. | https://www.tensortonic.com/research/llama/llama-forward |
 | Grouped-Query Causal Attention | Implement Llama grouped-query attention with more query heads than key-value heads and causal masking. | https://www.tensortonic.com/research/llama/llama-gqa |
